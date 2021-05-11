@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>  
+        <title>Eroare 404</title>
+        <%- include('../fragmente/head'); %> 
+       
+    </head>
+    
+    <body >
+        <div class="grid-container">
+            <header id="header">
+                <div class="title">
+                    <img src="/media/favicon/favicon-32x32.png" alt="sigla" height=auto>
+                    <h1 id="h1_header">Eroare 404</h1>
+                    
+                </div>
+                
+                
+            </header>
+
+            <nav id="mainMenu">
+                <%- include('../fragmente/menu'); %>
+            </nav> 
+
+            <article id="container_err" class="item1">
+
+                <h2>Ne pare rau, pagina ceruta nu a fost gasita sau este in lucru!</h2>
+                <img src="/media/images/error404_light.jpg" alt="imagine eroare 404" id="img_err">
+
+            </article>
+
+            <footer>
+                <%- include('../fragmente/footer'); %>
+            </footer>
+        </div>
+    </body>
+</html>

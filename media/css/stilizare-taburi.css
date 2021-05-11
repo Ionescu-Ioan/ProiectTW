@@ -1,0 +1,78 @@
+/*
+// 6. stilizare-taburi
+// https://www.w3schools.com/w3css/w3css_tabulators.asp
+// https://css-tricks.com/functional-css-tabs-revisited/
+*/
+
+iframe{
+    border: 0.2em solid var(--gray);
+    max-width: 100%;
+    width: 560px;
+    height: 315px;
+    display: flex;
+    flex-wrap: nowrap;
+    
+}
+
+.taburi-iframe > a
+{ 
+    background-color: var(--lightgreen);
+    background-clip: padding-box;
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    padding: 5px 20px;
+    box-shadow: 0px 0px 3px 2px var(--gray) inset;
+    border-top: 6px solid var(--darkgreen);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+.video-container{
+    width: 560px;
+    
+}
+
+.taburi-iframe 
+{
+    position: relative;
+    float: right;
+    display: inline-flex;
+    flex-wrap: nowrap;
+}
+
+.taburi-iframe :hover 
+{
+    background-color: var(--palegreen);
+    animation-duration: 1s;
+    animation-name: animatie-taburi-iframe;
+    animation-timing-function: linear;
+}
+
+@keyframes animatie-taburi-iframe {
+    0% {
+        background: var(--lightgreen);
+        background-clip: padding-box;
+        
+    }
+
+    25% {
+        background: var(--lightgreen);
+        background-clip: padding-box;
+    
+    }
+    50% {
+        background:var(--palegreen);
+        background-clip: padding-box;
+    
+    }
+    75%{
+        background: var(--palegreen);
+        background-clip: padding-box;
+    }
+    100% {
+        background: var(--palegreen);
+        background-clip: padding-box;
+    }
+
+}

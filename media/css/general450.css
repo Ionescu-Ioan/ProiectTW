@@ -1,0 +1,145 @@
+
+
+/**
+//
+// Mobile screen
+// https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+// _____________________________________________
+*/
+@media only screen and (max-width: 450px) {
+    body {
+        font-size: 80%;
+    }
+    
+    .grid-container {
+        margin: 0;
+        width: 100%;
+    }
+
+    header, article, section {
+        padding: 10px;
+    
+    }
+
+    header .title img {
+        display: none;
+    }
+
+    header .title h1 {
+        font-size: 1rem;
+        width: 100%;
+    }
+   
+    /**
+    // 3. variante-meniu
+    // https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
+    */
+    .meniu{
+    position: absolute;
+    overflow: visible;
+    z-index: 10;
+    }
+
+    #hamburger {
+       /*/*/
+        display: block;
+        font-size: 1.5em;
+        
+    }
+
+    #ch-menu:checked+ul.meniu{
+        width: 100%;
+        /*position: inherit;
+        z-index: 100;*/
+        display: block;
+        animation: animatie-meniu-mobil;
+        animation-duration: 1s;
+        
+    }
+
+    
+
+    @keyframes animatie-meniu-mobil {
+
+        0%{ 
+            transform-origin: top left;
+            transform: rotate(-90deg);
+            opacity: 0.8;
+        }
+        100%{
+           
+            transform-origin: top left;
+            transform: rotate(0deg);
+            opacity: 1;
+        }
+
+    }
+
+    nav .element-meniu:hover a::after{
+        display: none; 
+    }
+
+    ul.meniu{
+        display: none;
+    }
+   
+    nav li, nav li ul li {
+        float: none;
+        display: block;
+        text-align: center;
+    }
+
+    nav li ul {
+        position: relative;
+    }
+
+    nav a {
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    nav a.acasa {
+        display: inline-block;
+        position: relative;
+        right: 9999px;
+    }
+
+    /** https://fontawesome.com/icons/home */
+    nav a.acasa::before {
+        content: "\f015";
+        display: block;
+        font-family: "FontAwesome";
+        font-size: 2em;
+        position: absolute;
+        right: -9999px;
+        text-align: center;
+        width: 100%;
+    }
+
+    nav ul li:hover {
+        background-color: var(--white);
+        color: var(--black);
+    }
+    
+    nav ul > li:hover > ul{
+        animation:none;
+        
+    }
+    
+    nav .submeniu ul li{
+        background-color: var(--palegreen);
+        color: var(--black);
+    }
+
+    nav .submeniu ul li:hover {
+        background-color: var(--lightgreen);
+        color: var(--black);
+    }
+    
+
+    nav ul li:hover a {
+        color: var(--black);
+    }
+
+}

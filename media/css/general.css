@@ -1,0 +1,82 @@
+
+@import "layout-responsive.css";
+@import "variante-meniu.css";
+@import "stilizare-hr.css";
+@import "link-top.css";
+@import "stilizare-taburi.css";
+@import "animatie-banner_.css";
+@import "stilizare-tabel_.css";
+@import "general450.css";
+@import "general920.css";
+
+/*
+// 1. schema-cromatica + counter
+// _____________________________________________
+*/
+
+body{
+    --green: #30AD24;
+    --gray: #4E634C;
+    --darkgreen: #1B6114;
+    --lightgreen: #3EE02F;
+    --palegreen: #7EE675;
+    --black: #000000;
+    --white: #FFFFFF;
+
+    --border-radius: 20px;
+    background-color: var(--green);
+    border-color: var(--darkgreen);
+    color: var(--black); 
+    font-family: "Manrope", sans-serif;
+    counter-reset: section-counter;
+}
+
+section::before{
+
+    counter-increment: section-counter;
+    content: "Section " counter(section-counter) ":  "; 
+    display: inline-block;
+    height: 0;
+    overflow: hidden;
+    width: 0;
+
+}
+
+
+#title{
+    width: auto;
+    max-width: 450px;
+}
+
+.fa-3x{
+    font-size: 0.5rem;
+    display: inline-block;
+
+}
+
+/*
+// stilizare sectiune custom
+// https://www.w3schools.com/cssref/css3_pr_flex.asp
+// http://flexboxfroggy.com/
+*/
+#best-sellers ol {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+#best-sellers ol li {
+    flex: 25%;
+    margin: 25px;
+}
+
+#img_err
+{
+    height: 50vh;
+    width: auto;
+}
+#container_err
+{
+    width: 100%;
+    text-align: center;
+}

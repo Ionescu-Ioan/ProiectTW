@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ro"> 
+    <head>
+        <%- include('../fragmente/head'); %> 
+    </head>
+
+    <body>
+       
+        <div class="grid-container">
+          
+            <header id="header">
+                <%- include('../fragmente/header'); %>
+            </header>
+            
+            <nav id="mainMenu">
+                <%- include('../fragmente/menu'); %>
+            </nav> 
+            
+            <article id="about-us" class="item1">
+
+                <h2>Prezentare generala</h2>
+                
+                <%- include('../fragmente/galerie_statica'); %>
+                
+                <p>Firma <b>EngineeringMasteryConstruct</b> se ocupă cu prestarea de <b>servicii în domeniul construcțiilor</b> și cu comercializarea de <b>materiale de constructii</b>.</p>
+                 
+                <section id="video-prezentare">
+                    <h2>Videoclipuri prezentare</h2>
+                
+                    <div class="video-container">
+                        <iframe name="ifr-video" src="/media/video/OTBx Air - Construction Promo.mp4"
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        <div class="taburi-iframe">
+                            <a href="/media/video/OTBx Air - Construction Promo.mp4" target="ifr-video">OTBxAir</a>
+                            <a href="/media/video/McDonald’s Transformation Construction Time-Lapse.mp4" target="ifr-video" >McDonald’s</a>
+                        </div>
+                    </div>
+
+                </section>
+
+            </article>
+
+            <section class="tabel item2">
+                <h3>Program de lucru  <div class="fa-3x">
+                    <i class="fas fa-hammer fa-spin fa-xs"></i>
+                  </div></h3>
+               
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Oră deschidere</th>
+                                <th>Oră închidere</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Luni-Vineri</td>
+                                <td>8:30</td>
+                                <td>18:30</td>
+                            </tr>
+                            <tr>
+                                <td>Sambata</td>
+                                <td>10:00</td>
+                                <td>18:00</td>
+                            </tr>
+                            <tr>
+                                <td>Duminica</td>
+                                <td colspan="2">Inchis</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3">Call-center: 071-234-5678</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <section class="calendar item3">
+                <h3>Calendar</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </section>
+
+            <section class="anunturi item4">
+                <h3>Anunturi</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </section>
+
+            <section class="online-users item5">
+                <h3>Utilizatori online</h3>
+                <p><%= locals.user_ip %></p>
+            </section>
+
+            <section class="statistici item6">
+                <h3>Statistici</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </section>
+
+            <section class="server item7">
+                <h3>Server</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </section>
+
+            <section id="best-sellers" class="item8">
+                <h2>Cele mai cump&#259;rate produse</h2>
+                <ol>
+                    <li>
+                        <img src="/media/images/roof-2805712_640.jpg" alt="&#350;indril&#259; bituminoas&#259;" height="200">
+
+                        <div class="name">
+                            <a href="/sindrila.html">&#350;indril&#259; <i>bituminoas&#259;</i></a>
+                        </div>
+
+                        <details>
+                            <summary>&#350;indril&#259; <i>bituminoas&#259;</i> pentru acoperi&#351; IKO</summary>
+                            <p>&#350;indril&#259; <i>bituminoas&#259;</i> de la IKO se pliaz&#259; pe orice tip de acoperi&#351;. De asemenea, montarea acesteia este mult mai facil&#259; dec&#226;t &#238;n cazul altor solu&#539;ii pentru acoperi&#351;. <i>Designul</i> &#351;indrilelor propuse de IKO este unul elegant, iar culorile din sortiment ofer&#259; un farmec aparte acoperi&#351;ului, fiind rezistente la razele <i>UV</i>.</p>
+                        </details>
+                        <span class="price">2,31 lei/mp</span>
+                    </li>
+
+                    <li>
+                        <img src="/media/images/hinged-doors-2709566_640.png" alt="U&#351;&#259; interioar&#259;" height="200">
+
+                        <div class="name">
+                            <a href="/usa-interior.html">U&#351;&#259; interioar&#259;</a>
+                        </div>
+
+                        <details>
+                            <summary>U&#351;&#259; interioar&#259; Classen</summary>
+                            <p>Tocul este format din capac toc &#351;i laterale toc. Exist&#259; 3 variante de toc: Standard, Arcus &#351;i New Arcus.</p>
+                        </details>
+                        <span class="price">209,12 lei</span>
+                    </li>
+
+                    <li>
+                        <img src="/media/images/brick-258938_640.jpg" alt="C&#259;ramid&#259; Porotherm" height="200">
+                            <div class="name">
+                                <a href="/alt-produs.html">C&#259;ramid&#259; <i>Porotherm</i></a></div>
+                            <details>
+                                <summary>C&#259;ramid&#259; <i>Porotherm</i> Robust</summary>
+                                <p>C&#259;ramida <i>Porotherm</i> Robust dispune de ghidajul Nut &#351;i Feder, ce ajut&#259; la realizarea unei <i>planeit&#259;&#539;i</i> perfecte a zid&#259;riei &#351;i faciliteaz&#259; tencuirea, contribuind la rapiditatea finaliz&#259;rii construc&#539;iei.</p>
+                                <dl>
+                                    <h4>Specifica&#539;ii tehnice:</h4>
+                                    <dt>Conductivitate termic&#259;: 0,202 W/mK</dt>
+                                    <dt>Material: Argil&#259; Ars&#259;</dt>
+                                    <dt>Ambalare: 60 buc/palet</dt>
+                                    <dt>Reac&#539;ie la foc: Euroclasa A1</dt>
+                                    <dt>Dimensiune: 375 x 250 x 238 mm</dt>
+                                    <dt>Rezisten&#539;&#259; la compresiune: 10 N/mm²</dt>
+                                    <dt>Consum: 43 buc/m³ zid&#259;rie</dt>
+                                </dl>
+                            </details>
+                        <span class="price">1.230,00 lei/mc</span>
+                    </li>
+                </ol>
+            </section>
+           
+            <footer>
+                <%- include('../fragmente/footer'); %>
+            </footer>
+        </div>
+        
+
+        <div class="disclaimer-container">
+            <span>Acesta este un proiect scolar.</span>
+        </div>
+    </body>
+</html>

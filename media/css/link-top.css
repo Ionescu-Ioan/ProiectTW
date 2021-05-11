@@ -1,0 +1,80 @@
+/*
+// 5. link-top
+// https://www.w3schools.com/howto/howto_css_shapes.asp
+// https://css-tricks.com/the-shapes-of-css/
+*/
+
+#box {
+    opacity: 0.3;
+    position: fixed;
+    bottom: 1vh;
+    left: 1vw;
+    background:
+     linear-gradient(to top right   ,var(--lightgreen) 49.5%, transparent 50%) top right,
+     linear-gradient(to top left    ,var(--lightgreen) 49.5%, transparent 50%) top left,
+     linear-gradient(to bottom right,var(--lightgreen) 49.5%, transparent 50%) bottom right,
+     linear-gradient(to bottom left ,var(--lightgreen) 49.5%, transparent 50%) bottom left;
+
+    background-size:50% 50%;
+    background-repeat:no-repeat;
+
+    width: 45px;  
+    height: 40px; 
+    margin: 1.25px;
+    text-decoration: none;
+    transition: all 400ms linear;
+ 
+  }
+
+#box #text-top{
+      opacity: 0.85;
+      position: relative;
+      float: left;
+      visibility: hidden;
+      background-color: var(--white);
+      color: var(--black);
+      padding: 0.2rem;
+      font-size: 65%;
+      width: 100px;
+      margin-right: 40px;
+      right: 105%;
+      z-index: 1;
+      display: block;
+
+  }
+
+#box:hover #text-top{
+      visibility: visible;
+      margin-left: 120px;
+      
+  }
+#box:hover{
+    opacity: 1;
+    background:
+    linear-gradient(to top right   ,var(--darkgreen) 49.5%, transparent 50%) top right,
+    linear-gradient(to top left    ,var(--darkgreen) 49.5%, transparent 50%) top left,
+    linear-gradient(to bottom right,var(--darkgreen) 49.5%, transparent 50%) bottom right,
+    linear-gradient(to bottom left ,var(--darkgreen) 49.5%, transparent 50%) bottom left;
+    background-size:50% 50%;
+    background-repeat:no-repeat;
+
+  }
+
+#box:hover #triunghi{
+    border-bottom: 20px solid var(--lightgreen);
+  }
+  
+#triunghi {
+    margin-top: 7px;
+    display: inline-block;
+    /*width: 0;
+    height: 0;*/
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid var(--darkgreen);
+    border-radius: 46%;
+    vertical-align: middle;
+    transition: all 500ms linear;
+    
+  }
+  

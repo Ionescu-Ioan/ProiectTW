@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>  
+        <title>Forbidden 403</title>
+        <%- include('../fragmente/head'); %> 
+       
+    </head>
+    
+    <body >
+        <div class="grid-container">
+            <header id="header">
+                <div class="title">
+                    <img src="/media/favicon/favicon-32x32.png" alt="sigla" height=auto>
+                    <h1 id="h1_header">Forbidden 403</h1>
+                    
+                </div>
+                
+                
+            </header>
+
+            <nav id="mainMenu">
+                <%- include('../fragmente/menu'); %>
+            </nav> 
+
+            <article id="container_err" class="item1">
+
+                <h2>Ne pare rau, pagina ceruta nu poate fi accesata!</h2>
+                <img src="/media/images/403forbiddenerror.jpg" alt="imagine eroare 403" id="img_err">
+
+            </article>
+
+            <footer>
+                <%- include('../fragmente/footer'); %>
+            </footer>
+        </div>
+    </body>
+</html>

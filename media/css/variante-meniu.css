@@ -1,0 +1,123 @@
+/*
+// 3. variante-meniu
+// https://www.w3schools.com/css/css_dropdowns.asp
+// https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_navbar
+*/
+
+
+nav {
+    background-color: var(--darkgreen);
+    position: sticky;
+    z-index: 10;
+	top: 0;
+}
+
+#hamburger {
+    display: none;
+
+}
+#ch-menu{
+    display: none;
+}
+
+nav > ul {
+    
+    background-color: var(--darkgreen);
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+nav li {
+    float: left;
+}
+
+nav ul > li:hover > ul{
+    animation-name: aparitie_meniu;
+    animation-duration:0.4s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+}
+
+@keyframes aparitie_meniu{
+    0%{
+       transform: scale(1, 0);
+    } 
+	100%{
+    	transform: scale(1, 1);
+    }
+}
+
+nav .element-meniu:hover a::after{
+    
+    background: linear-gradient(to left, var(--lightgreen) , var(--darkgreen));
+    animation-duration: 0.4s;
+    animation-name: animatie-gradient;
+    animation-timing-function: linear;
+    
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 5px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+}
+
+nav .element-meniu:hover a {
+    margin-bottom:  -5px;
+}
+
+@keyframes animatie-gradient {
+    0% {
+        background-size: 500% 100%;
+    }
+    100% {
+        background-size: 100% 100%;
+    }
+}
+
+nav li a, nav li ul {
+    display: inline-block;
+    color: var(--white);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav .submeniu ul li{
+    background-color: var(--darkgreen); 
+    transition: all 400ms linear;
+}
+
+nav .submeniu ul li:hover {
+    background-color: var(--lightgreen);
+    color: var(--black);
+}
+
+nav li:hover ul {
+
+    display: block;
+}
+
+nav li ul {
+    display: none;
+    min-width: 160px; 
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+nav li ul li {
+    display: block;
+    float: none;
+    text-align: left;
+    text-decoration: none;
+}
+
+nav .submeniu ul li:hover a{
+    color: var(--black);
+}
+

@@ -1,0 +1,53 @@
+/*
+// 7. animatie-banner_
+// https://www.w3schools.com/cssref/css3_pr_animation-direction.asp
+// https://code-boxx.com/html-css-news-ticker-horizontal-vertical/
+*/
+
+.disclaimer-container {
+    animation-duration: 20s; /** 15s animation + 5sec display */
+    animation-name: disclaimer;
+    animation-timing-function: linear;
+    background: var(--gray);
+    border: 2px solid var(--darkgreen);
+    bottom: 0;
+    opacity: 0;
+    margin-bottom: 5px;
+    right: 0;
+    overflow: hidden;
+    position: fixed;
+    z-index: 100;
+}
+
+.disclaimer-container span {
+    overflow: hidden;
+    padding: 15px;
+    white-space: nowrap;
+}
+
+@keyframes disclaimer {
+    0% {
+        background: var(--darkgreen);
+        border: 2px solid var(--black);
+        opacity: 1;
+        right: 100%;
+    }
+    37% {
+        background: var(--lightgreen);
+        border: 2px solid var(--gray);
+        opacity: 1;
+        right: 50%;
+    }
+    75% {
+        background: var(--gray);
+        border: 2px solid var(--lightgreen);
+        opacity: 1;
+        right: 0;
+    }
+    100% {
+        background: var(--lightgreen);
+        border: 2px solid var(--gray);
+        opacity: 1;
+        right: 0;
+    }
+}

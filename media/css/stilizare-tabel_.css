@@ -1,0 +1,55 @@
+/*
+// 8. stilizare-tabel_
+// https://www.w3schools.com/css/css_table.asp
+// https://www.w3schools.com/css/css_table_style.asp
+// https://www.w3schools.com/css/css3_borders.asp
+*/
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th, tfoot td {
+    background-color: var(--darkgreen);
+    color: white;
+}
+
+tfoot td {
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--lightgreen);
+}
+
+tbody tr:nth-child(even):hover {
+    background-color: var(--darkgreen);
+    color: var(--white);
+}
+
+tr:nth-child(odd) {
+    background-color: var(--palegreen);
+}
+
+tr:nth-child(odd):hover {
+    background-color: var(--gray);
+    color: var(--white);
+}
+
+/** https://www.w3schools.com/css/css3_borders.asp */
+thead th:first-child {
+    border-radius: var(--border-radius) 0 0 0;
+}
+thead th:last-child {
+    border-radius: 0 var(--border-radius) 0 0;
+}
+tfoot td {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+

@@ -1,0 +1,66 @@
+
+/**
+//
+// Medium screen
+// https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+// _____________________________________________
+*/
+@media only screen and (max-width: 920px) {
+    body {
+        font-size: 80%;
+    }
+
+    nav a.acasa{
+        visibility: hidden;
+    }
+    nav a.acasa::before {
+        visibility: visible;
+        content: "\f015";
+        display: block;
+        font-family: "FontAwesome";
+        font-size: 2em;
+        text-align: center;
+        width: 100%;
+    }
+
+    .video-container{
+        border: 0;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .grid-container {
+        display: block;
+        width: 90%;
+    }
+    
+    video {
+        width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .disclaimer-container {
+        display: none;
+    }
+
+    /**
+     // 8. stilizare-tabel_
+     */
+    table {
+        min-width: 600px;
+    }
+
+    .table-wrapper {
+        overflow-x: scroll;
+    }
+
+    /**
+     // stilizare sectiune custom
+     */
+    #best-sellers ol li {
+        flex: 40%;
+    }
+}

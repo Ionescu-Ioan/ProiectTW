@@ -1,0 +1,131 @@
+{
+	"cale_galerie":"/media/galerie_statica",
+	"imagini": [
+		{
+			"fisier":"img1.png",
+			"descriere":"Proiect 1",
+			"anotimp": "vara"
+		},
+		{
+			"fisier":"img2.png",
+			"descriere":"Proiect 2",
+			"anotimp": "vara"
+		},
+		{
+			"fisier":"img3.png",
+			"descriere":"Proiect 3",
+			"anotimp": "vara"
+		},
+		{
+			"fisier":"img4.png",
+			"descriere":"Proiect 4",
+			"anotimp": "vara"
+		},
+		{
+			"fisier":"img5.png",
+			"descriere":"Proiect 5",
+			"anotimp": "vara"
+		},
+		{
+			"fisier":"img6.png",
+			"descriere":"Proiect 6",
+			"anotimp": "vara"
+		},
+		{
+			"fisier":"img7.png",
+			"descriere":"Proiect 7",
+			"anotimp": "vara"
+		},
+		{
+			"fisier":"img8.png",
+			"descriere":"Proiect 8",
+			"anotimp": "vara"
+		},
+		{
+			"fisier":"img9.png",
+			"descriere":"Proiect 9",
+			"anotimp": "vara"
+		},
+		{
+			"fisier":"img10.png",
+			"descriere":"Proiect 10",
+			"anotimp": "vara"
+		},
+		{
+			"fisier":"img11.png",
+			"descriere":"Proiect 11",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier":"img12.png",
+			"descriere":"Proiect 12",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier":"img13.png",
+			"descriere":"Proiect 13",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier":"img14.png",
+			"descriere":"Proiect 14",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier":"img15.png",
+			"descriere":"Proiect 15",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier":"img16.png",
+			"descriere":"Proiect 16",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier":"img17.png",
+			"descriere":"Proiect 17",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier":"img18.png",
+			"descriere":"Proiect 18",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier":"img19.png",
+			"descriere":"Proiect 19",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier":"img20.png",
+			"descriere":"Proiect 20",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier":"img21.png",
+			"descriere":"Proiect 21",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier":"img22.png",
+			"descriere":"Proiect 22",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier":"img23.png",
+			"descriere":"Proiect 23",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier":"img24.png",
+			"descriere":"Proiect 24",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier":"img25.png",
+			"descriere":"Proiect 25",
+			"anotimp": "iarna"
+		}
+	
+	]
+}

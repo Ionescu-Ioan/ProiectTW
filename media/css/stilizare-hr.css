@@ -1,0 +1,16 @@
+/*
+// 4. stilizare-hr
+// https://www.w3schools.com/css/css3_gradients.asp
+// https://www.positronx.io/create-horizontal-line-html/
+*/
+
+hr {
+    background: linear-gradient(135deg, var(--white) 20%, transparent 35%) -20px 0,
+        linear-gradient(225deg, var(--white) 25%, transparent 20%) -20px 0,
+        linear-gradient(315deg, var(--white) 25%, transparent 35%),
+        linear-gradient(45deg, var(--white) 25%, transparent 20%);
+    background-color: var(--green);
+    background-size: 30px 30px;
+    border: none;
+    height: 30px;
+}
