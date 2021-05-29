@@ -7,8 +7,8 @@
     </head>
    
     <body>
-        
-        <div class="grid-galerie-statica">
+        <div class="grid-container">
+
             <header id="header">
                 <%- include('../fragmente/header'); %>
             </header>
@@ -16,11 +16,15 @@
             <nav id="mainMenu">
                 <%- include('../fragmente/menu'); %>
             </nav> 
+            
+            <article class="item1">
+                <h2>Galerie</h2>
+                <div class="grid-galerie-statica">
 
-            <h2>Galerie</h2>
+                    <%- include('../fragmente/galerie_statica'); %>
 
-            <%- include('../fragmente/galerie_statica'); %>
-
+                </div>
+            </article>
 
             <footer>
                 <%- include('../fragmente/footer'); %>

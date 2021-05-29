@@ -1,0 +1,148 @@
+/*ex 6*/
+#watermark{
+    display:none;
+}
+
+
+@media print {
+.grid-container{
+    display: block;
+}
+/*ex 5*/
+
+#mainMenu{
+   display: none 
+}
+
+.title{
+   
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    top: 50%; 
+    text-align: center;
+    page-break-after: always;
+    margin-top: 50vh;
+    /* margin-bottom: 50vh; */
+}
+
+.title > h1{
+    font-size: 2.5rem;
+    text-align: center;
+    text-decoration: underline solid var(--black);
+}
+
+footer{
+    position: absolute;
+    text-align: center;
+    page-break-before: always;
+    margin-top: 30vh;
+}
+/*ex 2*/
+.imagine{
+    display: none;
+}
+
+img{
+    display: none;
+}
+
+#video-prezentare{
+    display: none;
+}
+
+.video-container{
+    display: none;
+}
+
+/*ex 4*/
+a{
+    text-decoration: none !important;
+    color: var(--black);
+}
+.disclaimer-container{
+    border: 3px dotted var(--black);
+    width: 80%;
+    height: 2rem;
+    animation: none;
+    opacity: 1;
+    top: 0;
+    left: 52%; 
+    transform: translateX(-50%); 
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    /* z-index: 100; */
+    font-size: 1.5rem;
+    background-color: white;
+}
+
+ .disclaimer-container span {
+    text-align: center;
+    overflow: hidden;
+    padding: 15px;
+    white-space: nowrap;
+}
+     
+
+/*ex 3*/    
+.to-top{
+    display: none;
+}
+
+h1{
+    page-break-after: always;
+    text-align:center;
+    margin-left:1cm;
+}
+#grid-pag{
+    font-size: 10px;
+    box-sizing:border-box;
+    page-break-before:always;
+    background-color: white;
+    grid-template-rows: calc(100vh - 10px) 100vh 100vh 100vh;
+    }
+    html, body {
+    width: 210mm;
+    /* height: 297mm; */
+    /*height: 282mm;*/
+            overflow:visible !important;
+    }
+
+    /* ex 6*/
+    #watermark
+    {
+        border: 8px double #999;
+        opacity:0.65;
+        width: 100px;
+        height: 2cm;
+        display: block;
+        position: fixed;
+        bottom:0;
+        color:rgba(0,0,0,0.4);
+        right:0;
+    }
+   
+#end{
+    page-break-before: always;
+}
+}
+
+@page {
+    size: A4 portrait;
+    margin-bottom:2cm;
+    margin-top:2cm;
+    counter-increment: page;
+        
+}
+@page:left{
+
+    margin-left:2.5cm;
+    margin-right:0.5cm;
+}
+@page:right{
+
+    margin-right:2.5cm;
+    margin-left:0.5cm;
+}
+
+

@@ -1,0 +1,274 @@
+.grid-galerie-animata-16 {
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+  display: grid;
+  grid-template-areas: "item1 item2 item3 item4" "item5 item6 item7 item8" "item9 item10 item11 item12" "item13 item14 item15 item16";
+  margin: 0 auto;
+  width: 100%;
+  animation: play 64s 1s linear infinite;
+}
+
+.grid-galerie-animata-16:hover {
+  animation-play-state: paused;
+}
+
+@keyframes play {
+  0% {
+    transform-origin: 0 0;
+    transform: scale(1);
+  }
+  4.1666666667% {
+    transform-origin: 0 0;
+    transform: scale(4);
+  }
+  2.0833333333% {
+    transform-origin: 0 0;
+    transform: scale(4);
+  }
+  6.25% {
+    transform-origin: 0 0;
+    transform: scale(1);
+  }
+  6.25000625% {
+    transform-origin: 0 33.33%;
+    transform: scale(1);
+  }
+  10.4166666667% {
+    transform-origin: 0 33.33%;
+    transform: scale(4);
+  }
+  8.3333333333% {
+    transform-origin: 0 33.33%;
+    transform: scale(4);
+  }
+  12.5% {
+    transform-origin: 0 33.33%;
+    transform: scale(1);
+  }
+  12.5000125% {
+    transform-origin: 0 66.66%;
+    transform: scale(1);
+  }
+  16.6666666667% {
+    transform-origin: 0 66.66%;
+    transform: scale(4);
+  }
+  14.5833333333% {
+    transform-origin: 0 66.66%;
+    transform: scale(4);
+  }
+  18.75% {
+    transform-origin: 0 66.66%;
+    transform: scale(1);
+  }
+  18.75001875% {
+    transform-origin: 0 100%;
+    transform: scale(1);
+  }
+  22.9166666667% {
+    transform-origin: 0 100%;
+    transform: scale(4);
+  }
+  20.8333333333% {
+    transform-origin: 0 100%;
+    transform: scale(4);
+  }
+  25% {
+    transform-origin: 0 100%;
+    transform: scale(1);
+  }
+  25.000025% {
+    transform-origin: 33.33% 0;
+    transform: scale(1);
+  }
+  29.1666666667% {
+    transform-origin: 33.33% 0;
+    transform: scale(4);
+  }
+  27.0833333333% {
+    transform-origin: 33.33% 0;
+    transform: scale(4);
+  }
+  31.25% {
+    transform-origin: 33.33% 0;
+    transform: scale(1);
+  }
+  31.25003125% {
+    transform-origin: 33.33% 33.33%;
+    transform: scale(1);
+  }
+  35.4166666667% {
+    transform-origin: 33.33% 33.33%;
+    transform: scale(4);
+  }
+  33.3333333333% {
+    transform-origin: 33.33% 33.33%;
+    transform: scale(4);
+  }
+  37.5% {
+    transform-origin: 33.33% 33.33%;
+    transform: scale(1);
+  }
+  37.5000375% {
+    transform-origin: 33.33% 66.66%;
+    transform: scale(1);
+  }
+  41.6666666667% {
+    transform-origin: 33.33% 66.66%;
+    transform: scale(4);
+  }
+  39.5833333333% {
+    transform-origin: 33.33% 66.66%;
+    transform: scale(4);
+  }
+  43.75% {
+    transform-origin: 33.33% 66.66%;
+    transform: scale(1);
+  }
+  43.75004375% {
+    transform-origin: 33.33% 100%;
+    transform: scale(1);
+  }
+  47.9166666667% {
+    transform-origin: 33.33% 100%;
+    transform: scale(4);
+  }
+  45.8333333333% {
+    transform-origin: 33.33% 100%;
+    transform: scale(4);
+  }
+  50% {
+    transform-origin: 33.33% 100%;
+    transform: scale(1);
+  }
+  50.00005% {
+    transform-origin: 66.66% 0;
+    transform: scale(1);
+  }
+  54.1666666667% {
+    transform-origin: 66.66% 0;
+    transform: scale(4);
+  }
+  52.0833333333% {
+    transform-origin: 66.66% 0;
+    transform: scale(4);
+  }
+  56.25% {
+    transform-origin: 66.66% 0;
+    transform: scale(1);
+  }
+  56.25005625% {
+    transform-origin: 66.66% 33.33%;
+    transform: scale(1);
+  }
+  60.4166666667% {
+    transform-origin: 66.66% 33.33%;
+    transform: scale(4);
+  }
+  58.3333333333% {
+    transform-origin: 66.66% 33.33%;
+    transform: scale(4);
+  }
+  62.5% {
+    transform-origin: 66.66% 33.33%;
+    transform: scale(1);
+  }
+  62.5000625% {
+    transform-origin: 66.66% 66.66%;
+    transform: scale(1);
+  }
+  66.6666666667% {
+    transform-origin: 66.66% 66.66%;
+    transform: scale(4);
+  }
+  64.5833333333% {
+    transform-origin: 66.66% 66.66%;
+    transform: scale(4);
+  }
+  68.75% {
+    transform-origin: 66.66% 66.66%;
+    transform: scale(1);
+  }
+  68.75006875% {
+    transform-origin: 66.66% 100%;
+    transform: scale(1);
+  }
+  72.9166666667% {
+    transform-origin: 66.66% 100%;
+    transform: scale(4);
+  }
+  70.8333333333% {
+    transform-origin: 66.66% 100%;
+    transform: scale(4);
+  }
+  75% {
+    transform-origin: 66.66% 100%;
+    transform: scale(1);
+  }
+  75.000075% {
+    transform-origin: 100% 0;
+    transform: scale(1);
+  }
+  79.1666666667% {
+    transform-origin: 100% 0;
+    transform: scale(4);
+  }
+  77.0833333333% {
+    transform-origin: 100% 0;
+    transform: scale(4);
+  }
+  81.25% {
+    transform-origin: 100% 0;
+    transform: scale(1);
+  }
+  81.25008125% {
+    transform-origin: 100% 33.33%;
+    transform: scale(1);
+  }
+  85.4166666667% {
+    transform-origin: 100% 33.33%;
+    transform: scale(4);
+  }
+  83.3333333333% {
+    transform-origin: 100% 33.33%;
+    transform: scale(4);
+  }
+  87.5% {
+    transform-origin: 100% 33.33%;
+    transform: scale(1);
+  }
+  87.5000875% {
+    transform-origin: 100% 66.66%;
+    transform: scale(1);
+  }
+  91.6666666667% {
+    transform-origin: 100% 66.66%;
+    transform: scale(4);
+  }
+  89.5833333333% {
+    transform-origin: 100% 66.66%;
+    transform: scale(4);
+  }
+  93.75% {
+    transform-origin: 100% 66.66%;
+    transform: scale(1);
+  }
+  93.75009375% {
+    transform-origin: 100% 100%;
+    transform: scale(1);
+  }
+  97.9166666667% {
+    transform-origin: 100% 100%;
+    transform: scale(4);
+  }
+  95.8333333333% {
+    transform-origin: 100% 100%;
+    transform: scale(4);
+  }
+  100% {
+    transform-origin: 100% 100%;
+    transform: scale(1);
+  }
+}
+
+/*# sourceMappingURL=galerie_animata_16.css.map */

@@ -1,0 +1,162 @@
+.grid-galerie-animata-9 {
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-rows: 33.3% 33.3% 33.3%;
+  display: grid;
+  grid-template-areas: "item1 item2 item3" "item4 item5 item6" "item7 item8 item9";
+  margin: 0 auto;
+  width: 100%;
+  animation: play 36s 1s linear infinite;
+}
+
+.grid-galerie-animata-9:hover {
+  animation-play-state: paused;
+}
+
+@keyframes play {
+  0% {
+    transform-origin: top left;
+    transform: scale(1);
+  }
+  7.4074074074% {
+    transform-origin: top left;
+    transform: scale(3);
+  }
+  3.7037037037% {
+    transform-origin: top left;
+    transform: scale(3);
+  }
+  11.1111111111% {
+    transform-origin: top left;
+    transform: scale(1);
+  }
+  11.1111222222% {
+    transform-origin: top right;
+    transform: scale(1);
+  }
+  18.5185185185% {
+    transform-origin: top right;
+    transform: scale(3);
+  }
+  14.8148148148% {
+    transform-origin: top right;
+    transform: scale(3);
+  }
+  22.2222222222% {
+    transform-origin: top right;
+    transform: scale(1);
+  }
+  22.2222444444% {
+    transform-origin: top center;
+    transform: scale(1);
+  }
+  29.6296296296% {
+    transform-origin: top center;
+    transform: scale(3);
+  }
+  25.9259259259% {
+    transform-origin: top center;
+    transform: scale(3);
+  }
+  33.3333333333% {
+    transform-origin: top center;
+    transform: scale(1);
+  }
+  33.3333666667% {
+    transform-origin: center center;
+    transform: scale(1);
+  }
+  40.7407407407% {
+    transform-origin: center center;
+    transform: scale(3);
+  }
+  37.037037037% {
+    transform-origin: center center;
+    transform: scale(3);
+  }
+  44.4444444444% {
+    transform-origin: center center;
+    transform: scale(1);
+  }
+  44.4444888889% {
+    transform-origin: center right;
+    transform: scale(1);
+  }
+  51.8518518519% {
+    transform-origin: center right;
+    transform: scale(3);
+  }
+  48.1481481481% {
+    transform-origin: center right;
+    transform: scale(3);
+  }
+  55.5555555556% {
+    transform-origin: center right;
+    transform: scale(1);
+  }
+  55.5556111111% {
+    transform-origin: bottom right;
+    transform: scale(1);
+  }
+  62.962962963% {
+    transform-origin: bottom right;
+    transform: scale(3);
+  }
+  59.2592592593% {
+    transform-origin: bottom right;
+    transform: scale(3);
+  }
+  66.6666666667% {
+    transform-origin: bottom right;
+    transform: scale(1);
+  }
+  66.6667333333% {
+    transform-origin: center left;
+    transform: scale(1);
+  }
+  74.0740740741% {
+    transform-origin: center left;
+    transform: scale(3);
+  }
+  70.3703703704% {
+    transform-origin: center left;
+    transform: scale(3);
+  }
+  77.7777777778% {
+    transform-origin: center left;
+    transform: scale(1);
+  }
+  77.7778555556% {
+    transform-origin: bottom center;
+    transform: scale(1);
+  }
+  85.1851851852% {
+    transform-origin: bottom center;
+    transform: scale(3);
+  }
+  81.4814814815% {
+    transform-origin: bottom center;
+    transform: scale(3);
+  }
+  88.8888888889% {
+    transform-origin: bottom center;
+    transform: scale(1);
+  }
+  88.8889777778% {
+    transform-origin: bottom left;
+    transform: scale(1);
+  }
+  96.2962962963% {
+    transform-origin: bottom left;
+    transform: scale(3);
+  }
+  92.5925925926% {
+    transform-origin: bottom left;
+    transform: scale(3);
+  }
+  100% {
+    transform-origin: bottom left;
+    transform: scale(1);
+  }
+}
+
+/*# sourceMappingURL=galerie_animata_9.css.map */

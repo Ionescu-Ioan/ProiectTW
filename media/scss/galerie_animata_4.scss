@@ -1,0 +1,49 @@
+@use "sass:list";
+@use "sass:math";
+$nrimag:4;
+$anchorlist: ((top, left), (top, right), (bottom, right), (bottom, left));
+
+.grid-galerie-animata-4 {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    display: grid;
+    grid-template-areas:
+        'item1 item2'
+        'item3 item4';
+    margin: 0 auto;
+    width: 100%;
+    animation: play 16s 1s linear infinite;
+}
+
+.grid-galerie-animata-4:hover {
+  animation-play-state: paused;
+}
+
+@keyframes play{
+   
+    $pas: 100/$nrimag;      
+    @for $i from 1 through $nrimag{
+
+        $anchor: list.nth($anchorlist, $i);
+        #{($i - 1) * $pas * 1.000001}%{
+            transform-origin: list.nth($anchor, 1) list.nth($anchor, 2);
+            transform: scale(1);
+        }
+
+        #{$i * $pas - $pas / 3}%{
+            transform-origin: list.nth($anchor, 1) list.nth($anchor, 2);
+            transform: scale(math.sqrt($nrimag));
+        }
+
+        #{$i * $pas - 2 * $pas / 3}%{
+            transform-origin: list.nth($anchor, 1) list.nth($anchor, 2);
+            transform: scale(math.sqrt($nrimag));
+        }
+
+        #{$i * $pas}%{
+            transform-origin: list.nth($anchor, 1) list.nth($anchor, 2);
+            transform: scale(1);
+        }       
+    }
+
+}

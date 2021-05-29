@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <%- include('../fragmente/head'); %> 
+        <link rel="stylesheet" type="text/css" href="/media/css/grid_galerie_animata.css">
+        <link rel="stylesheet" type="text/css" href=<%= "/media/css/galerie_animata_" + locals.galerie.length + ".css" %>>
+    </head>
+   
+    <body>
+        <div class="grid-container">
+
+            <header id="header">
+                <%- include('../fragmente/header'); %>
+            </header>
+
+            <nav id="mainMenu">
+                <%- include('../fragmente/menu'); %>
+            </nav> 
+            
+            <article class="item1">
+                <h2>Galerie animata</h2>
+                <div id="container_animatie">
+                    <div class=<%= "grid-galerie-animata-" + locals.galerie.length%>>
+                        <% nr_img = 0%>
+                        <% for (let imag of locals.galerie){ %> 
+                            <% nr_img = nr_img +1;%>
+                            <div id= <%= "imagine" + nr_img%> class="imagine" >
+                                <figure >
+                                    <picture>
+                                        <img src=<%-imag.mare%> alt=<%-imag.titlu%> copyright=<%-imag.copyright || ""%>/>
+                                       
+                                    </picture>
+                                    <figcaption class="figcaption"><%-imag.titlu%></figcaption>
+                                </figure>
+                            </div>
+                        <%} %>
+                    </div>
+                </div>
+                <p id="mesaj_galerie_animata">Galeria animata nu se poate afisa pe un display cu rezolutie mai mica de 920 px!</p>
+            </article>
+
+            <footer>
+                <%- include('../fragmente/footer'); %>
+            </footer>
+        </div>
+    </body>
+</html>

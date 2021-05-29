@@ -1,0 +1,82 @@
+.grid-galerie-animata-4 {
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  display: grid;
+  grid-template-areas: "item1 item2" "item3 item4";
+  margin: 0 auto;
+  width: 100%;
+  animation: play 16s 1s linear infinite;
+}
+
+.grid-galerie-animata-4:hover {
+  animation-play-state: paused;
+}
+
+@keyframes play {
+  0% {
+    transform-origin: top left;
+    transform: scale(1);
+  }
+  16.6666666667% {
+    transform-origin: top left;
+    transform: scale(2);
+  }
+  8.3333333333% {
+    transform-origin: top left;
+    transform: scale(2);
+  }
+  25% {
+    transform-origin: top left;
+    transform: scale(1);
+  }
+  25.000025% {
+    transform-origin: top right;
+    transform: scale(1);
+  }
+  41.6666666667% {
+    transform-origin: top right;
+    transform: scale(2);
+  }
+  33.3333333333% {
+    transform-origin: top right;
+    transform: scale(2);
+  }
+  50% {
+    transform-origin: top right;
+    transform: scale(1);
+  }
+  50.00005% {
+    transform-origin: bottom right;
+    transform: scale(1);
+  }
+  66.6666666667% {
+    transform-origin: bottom right;
+    transform: scale(2);
+  }
+  58.3333333333% {
+    transform-origin: bottom right;
+    transform: scale(2);
+  }
+  75% {
+    transform-origin: bottom right;
+    transform: scale(1);
+  }
+  75.000075% {
+    transform-origin: bottom left;
+    transform: scale(1);
+  }
+  91.6666666667% {
+    transform-origin: bottom left;
+    transform: scale(2);
+  }
+  83.3333333333% {
+    transform-origin: bottom left;
+    transform: scale(2);
+  }
+  100% {
+    transform-origin: bottom left;
+    transform: scale(1);
+  }
+}
+
+/*# sourceMappingURL=galerie_animata_4.css.map */

@@ -2,9 +2,11 @@
 <html lang="ro">
     <head>
         <%- include('../fragmente/head'); %>
+        <link rel="stylesheet" type="text/css" href="/media/css/video.css">
     </head>
     
     <body >
+    
         <div class="grid-container">
             <header id="header">
                 <%- include('../fragmente/header'); %>
@@ -23,6 +25,20 @@
                 <p>Obiectivul curent al firmei este ca p&#226;n&#259; &#238;n anul 2025 aceasta s&#259; &#238;&#351;i l&#259;rgeasc&#259; zona de activitate, ajung&#226;nd s&#259; &#238;&#351;i desf&#259;&#351;oare activitatea &#351;i &#238;n &#539;&#259;ri din Europa de Vest.
                     Atingerea obictivului propus se bazeaz&#259; pe numeroasele colabor&#259;ri, &#238;ncheiate cu succes, pe care <b>EngineeringMasteryConstruct</b> le-a avut de-a lungul timpului cu diverse companii multina&#539;ionale.
                     Succesul echipei <b><abbr title= "EngineeringMasteryConstruct">EMC</abbr></b> se datoreaz&#259; faptului c&#259; at&#226;t serviciile c&#226;t &#351;i <b>materialele</b> oferite sunt <b>certificate</b> la cele mai &#238;nalte standarde <abbr title= "International Organization for Standardization">ISO</abbr>.</p>
+               
+                <div id="centrare-video">
+                    <div id="clip-video">
+                        <div id="stil-video">
+                            <video id="myVideo" preload="auto" width="1080" height="600"  playsinline loop muted controls poster="/media/images/imagine_poster.png">
+                                <source src="/media/video/PromoVideo.mp4" type="video/mp4">
+                                <source src="/media/video/PromoVideo.ogv" type="video/ogv">
+                                <track default src="/media/video/tracks/video_promo_ro.vtt" kind="captions" srclang="ro" label="romana">
+                                <track src="/media/video/tracks/video_promo_en.vtt" kind="captions" srclang="en" label="engleza">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                
             </article>
 
             

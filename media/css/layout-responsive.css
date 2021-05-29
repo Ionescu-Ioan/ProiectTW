@@ -23,6 +23,7 @@ footer {
 
 .item1 {
     grid-area: item1;
+    width: 100%;
 }
 
 .item2 {
@@ -54,6 +55,7 @@ footer {
 }
 
 .grid-container {
+    box-sizing: border-box;
     background-image:linear-gradient(transparent 10%, transparent 30%, white 50%, transparent 70%, white 90%), url("/media/images/fundal-firma-constructii.png");
     background-repeat: no-repeat;
     background-attachment: fixed; /* background-ul va ramane fix cand dam scroll*/
@@ -73,6 +75,7 @@ footer {
 }
 
 header, article, section {
+    box-sizing: border-box;
     padding: 20px;
 }
 footer {

@@ -2,130 +2,257 @@
 	"cale_galerie":"/media/galerie_statica",
 	"imagini": [
 		{
-			"fisier":"img1.png",
-			"descriere":"Proiect 1",
+			"cale_fisier":"img_copyright.png",
+			"titlu": "Proiect imagine copyright",
+			"text_descriere":"Proiect imagine copyright",
+			"anotimp": "primavara",
+			"copyright": "'Building' by x-av is licensed under CC BY-NC-SA 2.0"
+		},
+		{
+			"cale_fisier":"img1.png",
+			"titlu": "Proiect 1",
+			"text_descriere":"Proiect 1",
+			"anotimp": "primavara"
+		},
+		{
+			"cale_fisier":"img2.png",
+			"titlu": "Proiect 2",
+			"text_descriere":"Proiect 2",
+			"anotimp": "primavara"
+		},
+		{
+			"cale_fisier":"img3.png",
+			"titlu": "Proiect 3",
+			"text_descriere":"Proiect 3",
+			"anotimp": "primavara"
+		},
+		{
+			"cale_fisier":"img4.png",
+			"titlu": "Proiect 4",
+			"text_descriere":"Proiect 4",
+			"anotimp": "primavara"
+		},
+		{
+			"cale_fisier":"img5.png",
+			"titlu": "Proiect 5",
+			"text_descriere":"Proiect 5",
+			"anotimp": "primavara"
+		},
+		{
+			"cale_fisier":"img6.png",
+			"titlu": "Proiect 6",
+			"text_descriere":"Proiect 6",
+			"anotimp": "primavara"
+		},
+		{
+			"cale_fisier":"img7.png",
+			"titlu": "Proiect 7",
+			"text_descriere":"Proiect 7",
+			"anotimp": "primavara"
+		},
+		{
+			"cale_fisier":"img8.png",
+			"titlu": "Proiect 8",
+			"text_descriere":"Proiect 8",
+			"anotimp": "primavara"
+		},
+		{
+			"cale_fisier":"img9.png",
+			"titlu": "Proiect 9",
+			"text_descriere":"Proiect 9",
+			"anotimp": "primavara"
+		},
+		{
+			"cale_fisier":"img10.png",
+			"titlu": "Proiect 10",
+			"text_descriere":"Proiect 10",
+			"anotimp": "primavara"
+		},
+		{
+			"cale_fisier":"img11.png",
+			"titlu": "Proiect 11",
+			"text_descriere":"Proiect 11",
+			"anotimp": "primavara"
+		},
+		{
+			"cale_fisier":"img12.png",
+			"titlu": "Proiect 12",
+			"text_descriere":"Proiect 12",
 			"anotimp": "vara"
 		},
 		{
-			"fisier":"img2.png",
-			"descriere":"Proiect 2",
+			"cale_fisier":"img13.png",
+			"titlu": "Proiect 13",
+			"text_descriere":"Proiect 13",
 			"anotimp": "vara"
 		},
 		{
-			"fisier":"img3.png",
-			"descriere":"Proiect 3",
+			"cale_fisier":"img14.png",
+			"titlu": "Proiect 14",
+			"text_descriere":"Proiect 14",
 			"anotimp": "vara"
 		},
 		{
-			"fisier":"img4.png",
-			"descriere":"Proiect 4",
+			"cale_fisier":"img15.png",
+			"titlu": "Proiect 15",
+			"text_descriere":"Proiect 15",
+			"anotimp": "iarna"
+		},
+		{
+			"cale_fisier":"img16.png",
+			"titlu": "Proiect 16",
+			"text_descriere":"Proiect 16",
+			"anotimp": "iarna"
+		},
+		{
+			"cale_fisier":"img17.png",
+			"titlu": "Proiect 17",
+			"text_descriere":"Proiect 17",
+			"anotimp": "iarna"
+		},
+		{
+			"cale_fisier":"img18.png",
+			"titlu": "Proiect 18",
+			"text_descriere":"Proiect 18",
+			"anotimp": "iarna"
+		},
+		{
+			"cale_fisier":"img19.png",
+			"titlu": "Proiect 19",
+			"text_descriere":"Proiect 19",
+			"anotimp": "toamna"
+		},
+		{
+			"cale_fisier":"img20.png",
+			"titlu": "Proiect 20",
+			"text_descriere":"Proiect 20",
+			"anotimp": "toamna"
+		},
+		{
+			"cale_fisier":"img21.png",
+			"titlu": "Proiect 21",
+			"text_descriere":"Proiect 21",
+			"anotimp": "toamna"
+		},
+		{
+			"cale_fisier":"img22.png",
+			"titlu": "Proiect 22",
+			"text_descriere":"Proiect 22",
+			"anotimp": "toamna"
+		},
+		{
+			"cale_fisier":"img23.png",
+			"titlu": "Proiect 23.....",
+			"text_descriere":"Proiect 23",
+			"anotimp": "iarna"
+		},
+		{
+			"cale_fisier":"img24.png",
+			"titlu": "Proiect 24",
+			"text_descriere":"Proiect 24",
 			"anotimp": "vara"
 		},
 		{
-			"fisier":"img5.png",
-			"descriere":"Proiect 5",
+			"cale_fisier":"img25.png",
+			"titlu": "Proiect 25",
+			"text_descriere":"Proiect 25",
 			"anotimp": "vara"
 		},
 		{
-			"fisier":"img6.png",
-			"descriere":"Proiect 6",
+			"cale_fisier":"img20.png",
+			"titlu": "Proiect 20.....",
+			"text_descriere":"Proiect 20",
 			"anotimp": "vara"
 		},
 		{
-			"fisier":"img7.png",
-			"descriere":"Proiect 7",
+			"cale_fisier":"img15.png",
+			"titlu": "Proiect 15.....",
+			"text_descriere":"Proiect 15",
 			"anotimp": "vara"
 		},
 		{
-			"fisier":"img8.png",
-			"descriere":"Proiect 8",
+			"cale_fisier":"img8.png",
+			"titlu": "Proiect 8.....",
+			"text_descriere":"Proiect 8",
 			"anotimp": "vara"
 		},
 		{
-			"fisier":"img9.png",
-			"descriere":"Proiect 9",
+			"cale_fisier":"img4.png",
+			"titlu": "Proiect 4.....",
+			"text_descriere":"Proiect 4",
 			"anotimp": "vara"
 		},
 		{
-			"fisier":"img10.png",
-			"descriere":"Proiect 10",
+			"cale_fisier":"img18.png",
+			"titlu": "Proiect 18.....",
+			"text_descriere":"Proiect 18",
 			"anotimp": "vara"
 		},
 		{
-			"fisier":"img11.png",
-			"descriere":"Proiect 11",
+			"cale_fisier":"img1.png",
+			"titlu": "Proiect 1.....",
+			"text_descriere":"Proiect 1",
+			"anotimp": "toamna"
+		},
+		{
+			"cale_fisier":"img5.png",
+			"titlu": "Proiect 5.....",
+			"text_descriere":"Proiect 5",
+			"anotimp": "toamna"
+		},
+		{
+			"cale_fisier":"img3.png",
+			"titlu": "Proiect 3.....",
+			"text_descriere":"Proiect 3",
+			"anotimp": "toamna"
+		},
+		{
+			"cale_fisier":"img17.png",
+			"titlu": "Proiect 17.....",
+			"text_descriere":"Proiect 17",
+			"anotimp": "toamna"
+		},
+		{
+			"cale_fisier":"img6.png",
+			"titlu": "Proiect 6.....",
+			"text_descriere":"Proiect 6",
+			"anotimp": "toamna"
+		},
+		{
+			"cale_fisier":"img23.png",
+			"titlu": "Proiect 23",
+			"text_descriere":"Proiect 23",
+			"anotimp": "toamna"
+		},
+		{
+			"cale_fisier":"img16.png",
+			"titlu": "Proiect 16.....",
+			"text_descriere":"Proiect 16",
 			"anotimp": "iarna"
 		},
 		{
-			"fisier":"img12.png",
-			"descriere":"Proiect 12",
+			"cale_fisier":"img14.png",
+			"titlu": "Proiect 14.....",
+			"text_descriere":"Proiect 14",
 			"anotimp": "iarna"
 		},
 		{
-			"fisier":"img13.png",
-			"descriere":"Proiect 13",
+			"cale_fisier":"img12.png",
+			"titlu": "Proiect 12.....",
+			"text_descriere":"Proiect 12",
 			"anotimp": "iarna"
-		},
+		},		
 		{
-			"fisier":"img14.png",
-			"descriere":"Proiect 14",
+			"cale_fisier":"img24.png",
+			"titlu": "Proiect 24.....",
+			"text_descriere":"Proiect 24",
 			"anotimp": "iarna"
-		},
+		},		
 		{
-			"fisier":"img15.png",
-			"descriere":"Proiect 15",
-			"anotimp": "iarna"
-		},
-		{
-			"fisier":"img16.png",
-			"descriere":"Proiect 16",
-			"anotimp": "iarna"
-		},
-		{
-			"fisier":"img17.png",
-			"descriere":"Proiect 17",
-			"anotimp": "iarna"
-		},
-		{
-			"fisier":"img18.png",
-			"descriere":"Proiect 18",
-			"anotimp": "iarna"
-		},
-		{
-			"fisier":"img19.png",
-			"descriere":"Proiect 19",
-			"anotimp": "iarna"
-		},
-		{
-			"fisier":"img20.png",
-			"descriere":"Proiect 20",
-			"anotimp": "iarna"
-		},
-		{
-			"fisier":"img21.png",
-			"descriere":"Proiect 21",
-			"anotimp": "iarna"
-		},
-		{
-			"fisier":"img22.png",
-			"descriere":"Proiect 22",
-			"anotimp": "iarna"
-		},
-		{
-			"fisier":"img23.png",
-			"descriere":"Proiect 23",
-			"anotimp": "iarna"
-		},
-		{
-			"fisier":"img24.png",
-			"descriere":"Proiect 24",
-			"anotimp": "iarna"
-		},
-		{
-			"fisier":"img25.png",
-			"descriere":"Proiect 25",
+			"cale_fisier":"img19.png",
+			"titlu": "Proiect 19.....",
+			"text_descriere":"Proiect 19",
 			"anotimp": "iarna"
 		}
-	
 	]
 }

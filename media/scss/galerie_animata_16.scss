@@ -1,0 +1,56 @@
+@use "sass:list";
+@use "sass:math";
+$nrimag:16;
+
+$anchorlist: ( (0, 0), (0, 33.33%), (0, 66.66%), (0, 100%),
+               (33.33%, 0), (33.33%, 33.33%), (33.33%, 66.66%), (33.33%, 100%),
+               (66.66%, 0), (66.66%, 33.33%), (66.66%, 66.66%), (66.66%, 100%),
+               (100%, 0), (100%, 33.33%), (100%, 66.66%), (100%, 100%)
+);
+
+.grid-galerie-animata-16 {
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    display: grid;
+    grid-template-areas:
+        'item1 item2 item3 item4'
+        'item5 item6 item7 item8'
+        'item9 item10 item11 item12'
+        'item13 item14 item15 item16';
+    margin: 0 auto;
+    width: 100%;
+    animation: play 64s 1s linear infinite;
+}
+
+.grid-galerie-animata-16:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes play{
+   
+    $pas: 100/$nrimag;      
+    @for $i from 1 through $nrimag{
+
+        $anchor: list.nth($anchorlist, $i);
+        #{($i - 1) * $pas * 1.000001}%{
+            transform-origin: list.nth($anchor, 1) list.nth($anchor, 2);
+            transform: scale(1);
+        }
+
+        #{$i * $pas - $pas / 3}%{
+            transform-origin: list.nth($anchor, 1) list.nth($anchor, 2);
+            transform: scale(math.sqrt($nrimag));
+        }
+
+        #{$i * $pas - 2 * $pas / 3}%{
+            transform-origin: list.nth($anchor, 1) list.nth($anchor, 2);
+            transform: scale(math.sqrt($nrimag));
+        }
+
+        #{$i * $pas}%{
+            transform-origin: list.nth($anchor, 1) list.nth($anchor, 2);
+            transform: scale(1);
+        }       
+    }
+
+}

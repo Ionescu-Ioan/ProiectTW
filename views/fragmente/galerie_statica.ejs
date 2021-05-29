@@ -1,30 +1,31 @@
 <%var nr_img = 0; %>
-<%var luna = new Date().getMonth(); %>
-<% for (let imag of locals.galerie){  %>
-    <% if ((luna == 11 || luna == 0 || luna == 1) && imag.anotimp == "iarna"){ %>    
+<% 
+function getImageSrc(imag, size){
+    if(size <= 450)
+    {
+        return imag.mic;
+    }
+    if(size <= 920)
+    {
+        return imag.mediu;
+    }
+    return imag.mare;
+}
+%>
+<% for (let imag of locals.galerie){ %> 
 <% nr_img = nr_img +1;%>
-<% console.log("iarna")%>
 
-<div class= <%= "imagine" + nr_img%> >
+<div id= <%= "imagine" + nr_img%> class="imagine" >
     <figure >
         <picture>
-            <img src=<%-imag.mare%> alt="text"/>
+            <source srcset=<%-imag.mic%> media="(max-width:450px)">
+            <source srcset=<%-imag.medie%> media="(max-width:920px)">
+            <img src=<%-imag.mare%> alt="<%-imag.descriere%>" copyright="<%-imag.copyright || ""%>"/>
         </picture>
         <figcaption><%-imag.descriere%></figcaption>
     </figure>
 </div>
-<% }else if(!(luna == 11 || luna == 0 || luna == 1) && imag.anotimp == "vara"){%>
-    <% nr_img = nr_img +1;%>
-    <% console.log(imag)%>
-    <div class= <%= "imagine" + nr_img%> >
-        <figure >
-            <picture>
-                <img src=<%-imag.mare%> alt="text"/>
-            </picture>
-            <figcaption><%-imag.descriere%></figcaption>
-        </figure>
-    </div>
-<%}} %>
+<%} %>
   
 
 

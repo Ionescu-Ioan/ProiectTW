@@ -1,0 +1,59 @@
+@use "sass:list";
+@use "sass:math";
+$nrimag:9;
+$anchorlist: ( (top, left), (top, right), (top, center),
+               (center, center), (center, right), (bottom, right),
+               (center, left), (bottom, center), (bottom, left)
+);
+
+.grid-galerie-animata-9 {
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-template-rows: 33.3% 33.3% 33.3%;
+    display: grid;
+    grid-template-areas:
+        'item1 item2 item3'
+        'item4 item5 item6'
+        'item7 item8 item9';
+    margin: 0 auto;
+    width: 100%;
+    animation: play 36s 1s linear infinite;
+}
+
+.grid-galerie-animata-9:hover {
+    animation-play-state: paused;
+  }
+  
+
+// 1 3 2
+// 7 4 5
+// 9 8 6
+
+//1 3 2 5 6 9 4 8 7
+@keyframes play{
+   
+    $pas: 100/$nrimag;      
+    @for $i from 1 through $nrimag{
+
+        $anchor: list.nth($anchorlist, $i);
+        #{($i - 1) * $pas * 1.000001}%{
+            transform-origin: list.nth($anchor, 1) list.nth($anchor, 2);
+            transform: scale(1);
+        }
+
+        #{$i * $pas - $pas / 3}%{
+            transform-origin: list.nth($anchor, 1) list.nth($anchor, 2);
+            transform: scale(math.sqrt($nrimag));
+        }
+
+        #{$i * $pas - 2 * $pas / 3}%{
+            transform-origin: list.nth($anchor, 1) list.nth($anchor, 2);
+            transform: scale(math.sqrt($nrimag));
+        }
+
+        #{$i * $pas}%{
+            transform-origin: list.nth($anchor, 1) list.nth($anchor, 2);
+            transform: scale(1);
+        }       
+    }
+
+}
