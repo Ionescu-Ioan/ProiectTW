@@ -3,6 +3,7 @@
 @import "variante-meniu.css";
 @import "stilizare-hr.css";
 @import "link-top.css";
+@import "buton-tema.css";
 @import "stilizare-taburi.css";
 @import "animatie-banner_.css";
 @import "stilizare-tabel_.css";
@@ -15,6 +16,7 @@
 // _____________________________________________
 */
 
+
 body{
     --green: #30AD24;
     --gray: #4E634C;
@@ -23,6 +25,29 @@ body{
     --palegreen: #7EE675;
     --black: #000000;
     --white: #FFFFFF;
+    --white_bck: #FFFFFF;
+    --buton_tema: #bdbb3d;
+   
+
+    --border-radius: 20px;
+    background-color: var(--green);
+    border-color: var(--darkgreen);
+    color: var(--black); 
+    font-family: "Manrope", sans-serif;
+    counter-reset: section-counter;
+}
+
+
+body.dark{
+    --green: #143a11;
+    --gray: #3c443b;
+    --darkgreen: #1B6114;
+    --lightgreen: #468341;
+    --palegreen: #1b5313;
+    --black: #000000;
+    --white: #FFFFFF;
+    --white_bck: #9db2b8;
+    --buton_tema: #80889b;
 
     --border-radius: 20px;
     background-color: var(--green);

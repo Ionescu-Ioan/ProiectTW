@@ -1,0 +1,16 @@
+
+#schimbare-tema {
+    opacity: 1;
+    position: fixed;
+    top: 1vh;
+    right: 1vw;
+    background-color: var(--buton_tema);
+    border-radius: 50%;
+}
+
+#schimbare-tema:hover {
+   cursor: pointer;
+}
+
+
+

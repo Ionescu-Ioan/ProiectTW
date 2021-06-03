@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <%- include("../fragmente/head") %>   
+        <link rel="stylesheet" href="/media/css/produse.css" type="text/css" />  
+        <script type="text/javascript" src=/media/js/produse.js></script>
+    </head>
+    <body>
+        <div class="grid-container">
+            <header id="header">
+                <%- include("../fragmente/header") %>
+            </header>
+            <nav id="mainMenu">
+                <%- include('../fragmente/menu'); %>
+            </nav> 
+
+            <main>
+                
+                <label for="inp-denumire">Denumire produs: </label><input type="text" id="inp-denumire" value=""><br/>
+                <label for="inp-pret">Pret: </label><span class="range-min-val"> </span><input type="range" id="inp-pret" value="0" min="0"  max="1500"><span class="range-max-val"></span><span id="rez-range"></span><br/>
+                
+                
+                <label>Categorie: </label><br/>
+                <input type="radio" id="rd-orice" onchange="getit();" name="rb-categorie" value="orice" checked>
+                <label for="rd-orice">Orice</label><br>
+                <input type="radio" id="rd-constructii" onchange="getit();" name="rb-categorie" value="constructii">
+                <label for="rd-constructii">Constructii</label><br>
+                <input type="radio" id="rd-amenajari" onchange="getit();" name="rb-categorie" value="amenajari">
+                <label for="rd-amenajari">Amenajari</label><br>
+                
+                <div id="check-box-orice">
+                    <label>Tip: </label><br/>
+                    <input type="checkbox" class="ck-orice" id="ck-orice-materiale-constructii" name="tip" value="materiale-constructii" onclick="validate();">
+                    <label for="ck-orice-materiale-constructii">Materiale constructii</label><br>
+                    <input type="checkbox" class="ck-orice" id="ck-orice-izolatii" name="tip" value="izolatii" onclick="validate();">
+                    <label for="ck-orice-izolatii">Izolatii</label><br>
+                    <input type="checkbox" class="ck-orice" id="ck-orice-sanitare" name="tip" value="sanitare" onclick="validate();">
+                    <label for="ck-orice-sanitare">Sanitare</label><br>
+                    <input type="checkbox" class="ck-orice" id="ck-orice-amenajari-interioare" name="tip" value="amenajari-interioare" onclick="validate();">
+                    <label for="ck-orice-amenajari-interioare">Amenajari interioare</label><br>
+                </div>
+
+                <div id="check-box-constructii">
+                    <label>Tip: </label><br/>
+                    <input type="checkbox" id="ck-constructii-materiale-constructii" name="tip" value="materiale-constructii" onclick="validate();">
+                    <label for="ck-constructii-materiale-constructii">Materiale constructii</label><br>
+                    <input type="checkbox" id="ck-constructii-izolatii" name="tip" value="izolatii" onclick="validate();">
+                    <label for="ck-constructii-izolatii">Izolatii</label><br>
+                </div>
+
+                <div id="check-box-amenajari">
+                    <label>Tip: </label><br/>
+                    <input type="checkbox" id="ck-amenajari-sanitare" name="tip" value="sanitare" onclick="validate();">
+                    <label for="ck-amenajari-sanitare">Sanitare</label><br>
+                    <input type="checkbox" id="ck-amenajari-interioare" name="tip" value="amenajari-interioare" onclick="validate();">
+                    <label for="ck-amenajari-interioare">Amenajari interioare</label><br>
+                </div>
+                
+
+                <label for="textarea">Specificatii produs:</label>
+                <textarea id="textarea" name="specificatii-produs" rows="2" cols="30"></textarea>
+
+
+                <label for="sl-culoare">Selectare culoare: </label>
+                <select id="sl-culoare" multiple>
+                    <% for( let culoare of locals.culori) { %>
+                        <option value="<%- culoare %>"><%- culoare %></option>
+                    <% } %>
+                </select>
+
+                <!-- {
+                    id serial PRIMARY KEY,
+        nume VARCHAR(50) UNIQUE NOT NULL,
+        descriere TEXT,
+        pret NUMERIC(8,2) NOT NULL,
+        greutate INT NOT NULL CHECK (greutate>0),   
+        tip_produs tipuri_materiale DEFAULT 'constructii',
+        categorie categ_materiale DEFAULT 'materiale constructii',
+        cu_livrare BOOLEAN NOT NULL DEFAULT FALSE,
+        imagine VARCHAR(300),
+        culoare VARCHAR(20),
+        materiale_componente VARCHAR [],
+        data_adaugare TIMESTAMP DEFAULT current_timestamp
+
+        nume : input de tip text
+        pret : input de tip range. Pentru inputul de tip range trebuie sa apara valoarea minima in stanga lui si valoarea maxima in dreapta lui, și de asemenea să se afișeze valoarea selectată (de exemplu în paranteză, după valoarea maximă).
+        categorie : grup de inputuri de tip radio (va avea si o optiune generala care sa nu aplice niciun filtru)
+        tip_produs : input de tip checkbox sau grup de inputuri de tip checkbox (în funcție de tipul de filtru)
+        descriere : textarea 
+        culoare : select simplu (prima optiune va fi si cea default (initial selectata), cu textul "nimic" sau "oricare" sau ceva asemănător care să se refere la situația în care acel filtru nu ne interesează.
+        materiale_componente : select multiplu
+                -->
+                <label for="sl-livrare">Selectare optiune livrare: </label>
+                <select id="sl-livrare">
+                    <option value="toate" selected="selected">toate</option>
+                    <option value="cu livrare">cu livrare</option>
+                    <option value="fara livrare">fara livrare</option>
+                </select>
+                
+                <p>
+                    <button id="filtrare">Filtreaza</button>
+                    <button id="sortCrescNume">Sorteaza crescator dupa nume</button>
+                    <button id="sortDescrescNume">Sorteaza descrescator dupa nume</button>
+                    <button id="resetare">Reseteaza</button>
+                </p>
+                <p id="p-suma">Apasați Alt+"c" pentru suma preturilor produselor afișate. </p>
+                <section id="produse">
+                    <h2>Produse</h2>
+                    <div class="grid-produse">
+                        <% for( let prod of locals.produse) { %>
+                            <article class="produs">
+                                <h3 class="nume">Nume: <a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
+                                <div class="info-prod">
+                                    <p class="pret">Preț: <span class="val-pret"><%- prod.pret%></span> lei</p>
+                                    <p class="materiale_componente">Materiale componente: <span class="val-materiale-componente"><%- prod.materiale_componente%></span></p>
+                                    <p class="tip_produs">Tip produs: <span class="val-tip-produs"><%- prod.tip_produs%></span></p>
+                                    <p class="data_adaugare">Data adăugării: <time class="val-data-adaugare"><%- prod.data_adaugare%></time></p>
+                                    <p class="cu_livrare">Livrare: <span class="val-cu-livrare"><% var livrare=""; if(prod.cu_livrare){livrare+="cu livrare";} else livrare+="fara livrare" %> <%-livrare%></span></p>
+                                    <p class="culoare">Cuoare: <span class="val-culoare"><%-prod.culoare%></span></p>
+                                </div>
+                                <p class="categorie">Categorie: <span class="val-categorie"><%- prod.categorie%></span></p>
+                                <figure>
+                                    <img src="/media/imagini_produse/<%- prod.imagine %>" style="width:50%;height:auto;" alt="[imagine <%- prod.nume %>]" />
+                                </figure>
+                            </article>
+                        <% }%>
+                    </div>
+                </section>
+            </main>
+        <footer>
+            <%- include("../fragmente/footer") %>
+        </footer>
+    </div>
+    </body>
+</html>

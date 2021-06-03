@@ -7,13 +7,28 @@ const session = require('express-session');
 const formidable = require('formidable');
 const nodemailer = require("nodemailer");
 const sassMiddleware = require('node-sass-middleware');
+const { Client } = require('pg');
 
 // https://expressjs.com/en/guide/routing.html
 const express = require('express');
 const { stringify } = require('querystring'); //extrage doar proprietatea stringify 
 const app = express();
 
+const client = new Client({
+    host: 'localhost',
+    user: 'ionut',
+    password: '77777',
+    database: 'proiectTW',
+    port:5432
+});
+client.connect();
 
+
+const fetchMainCategories = async () => {
+    const { rows: mainCategories } = await Client.query("select distinct(categorie) from materiale");
+  
+    return mainCategories.map(({ categ }) => categorie);
+  };
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -27,7 +42,7 @@ app.set('view engine', 'ejs');
 // }));
 
 app.get("*/galerie_statica.json",function(req, res){    
-    console.log("intra!");
+   
     res.status(403).render("pagini/403");
 });
 
@@ -40,6 +55,7 @@ const imaginiVerificate = (function verificaImagini(){
 	const caleGalerie = path.join(__dirname, jsi.cale_galerie);
     const caleImagine = "/media/galerie_statica";
     const vectImagini=[];
+  
 
 	for (let im of jsi.imagini){
 		const imVeche= path.join(caleGalerie, im.cale_fisier);//obtin claea completa (im.cale_fisier are doar numele fisierului din folderul caleGalerie)		
@@ -94,7 +110,7 @@ app.get(["*/galerie_animata_4.css", "*/galerie_animata_9.css", "*/galerie_animat
     culori=["navy","black","purple","grey"]
     let culoareAleatoare =culori[Math.floor(Math.random()*culori.length)];//iau o culoare aleatoare pentru border
     let rezScss=ejs.render(sirScss,{culoare:culoareAleatoare});// transmit culoarea catre scss si obtin sirul cu scss-ul compilat
-    console.log(rezScss);
+   
     fs.writeFileSync("./temp/" + scssFileName,rezScss);//scriu scss-ul intr-un fisier temporar
     exec(`sass ./temp/${scssFileName} ./temp/${cssFileName}`, (error, stdout, stderr) => {//execut comanda sass (asa cum am executa in cmd sau PowerShell)
         if (error) {
@@ -107,7 +123,7 @@ app.get(["*/galerie_animata_4.css", "*/galerie_animata_9.css", "*/galerie_animat
             res.end();
             return;
         }
-        console.log(`stdout: ${stdout}`);
+
         //totul a fost bine, trimit fisierul rezultat din compilarea scss
         res.sendFile(path.join(__dirname,`temp/${cssFileName}`));
     });
@@ -168,9 +184,38 @@ app.get(['/pagina_galerie_animata'], function(req, res) {
 //     res.status(403).send('pagini/403');
 // });
 
+app.get("/produse",function(req, res){
+    
+    //console.log("Url:",req.url);
+    //console.log("Query:", req.query.tip);
+    // conditie_booleana? val_true : val_false
+    let conditie1= req.query.categ ?  " and categorie='"+req.query.categ+"'" : "";
+    let conditie2= req.query.tip ?  " and tip_produs='"+req.query.tip+"'" : "";
+    //daca am parametrul tip in cale (tip=cofetarie, de exemplu) adaug conditia pentru a selecta doar produsele de acel tip
+    client.query("select id, nume, pret, greutate, tip_produs, categorie, cu_livrare, imagine, culoare, materiale_componente, data_adaugare from materiale where 1=1"+conditie1+conditie2, function(err,rez){
+     
+        //console.log(rez.rows);
+        client.query("select unnest(enum_range( null::tipuri_materiale)) as tip, unnest(enum_range( null::categ_materiale)) as categ, unnest(enum_range( null::culori)) as culoare", function(errEnums,rezEnums){
+        
+            let tipuriMateriale = [];
+            let categoriiMateriale = [];
+            let culori = [];
+            let rows = rezEnums.rows;
+            rows.forEach(({tip, categ, culoare}) => {
+                if(tip) tipuriMateriale.push(tip);
+                if(categ) categoriiMateriale.push(categ);
+                if(culoare) culori.push(culoare);
+            });
+          
+            res.render("pagini/produse", {produse:rez.rows, tipuriMateriale, categoriiMateriale, culori});//obiectul {a:10,b:20} poarta numele locals in ejs  (locals["a"] sau locals.a)
+        });
+    });
+});
+
 // map to template -> https://webapplog.com/url-parameters-and-routing-in-express-js/
-app.get(['/:template', '/:template/*'], function(req, res, next) {
+app.get(['/:template', '/:template/*'],  function(req, res, next) {    
     const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+   
     let template = req.params.template;
     res.render('pagini/' + template, {user_ip: ip}, function(err, html) {
         // handle missing template
@@ -182,7 +227,41 @@ app.get(['/:template', '/:template/*'], function(req, res, next) {
         }
         res.send(html);
     });
+
 });
+
+
+
+// var options = [
+//     set0 = ['Option 1','Option 2'],
+//     set1 = ['First Option','Second Option','Third Option']
+// ];
+// function makeUL(array) {
+// // Create the list element:
+// var list = document.createElement('ul');
+
+// for (var i = 0; i < array.length; i++) {
+//     // Create the list item:
+//     var item = document.createElement('li');
+
+//     // Set its contents:
+//     item.appendChild(document.createTextNode(array[i]));
+
+//     // Add it to the list:
+//     list.appendChild(item);
+// }
+
+// // Finally, return the constructed list:
+// return list;
+// }
+
+// // Add the contents of options[0] to #foo:
+// document.getElementById('foo').appendChild(makeUL(options[0]));
+
+
+
+
+
 
 
 // app.all('/media', function (req, res, next) {

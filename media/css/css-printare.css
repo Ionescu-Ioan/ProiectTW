@@ -89,6 +89,10 @@ a{
     display: none;
 }
 
+.buton-tema{
+    display: none;
+}
+
 h1{
     page-break-after: always;
     text-align:center;
