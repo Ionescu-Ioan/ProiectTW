@@ -14,14 +14,11 @@ const express = require('express');
 const { stringify } = require('querystring'); //extrage doar proprietatea stringify 
 const app = express();
 
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
-});
+const connectionString = 'postgresql://dbuser:secretpassword@database.server.com:3211/mydb';
+const pool = new Pool({
+    connectionString: connectionString,
+})
 
-client.connect();
 
 
 
