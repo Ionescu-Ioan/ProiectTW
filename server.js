@@ -14,12 +14,14 @@ const express = require('express');
 const { stringify } = require('querystring'); //extrage doar proprietatea stringify 
 const app = express();
 
-const connectionString = 'postgresql://dbuser:secretpassword@database.server.com:3211/mydb';
-const pool = new Pool({
-    connectionString: connectionString,
-})
-
-
+const client = new Client({
+    host: 'ec2-54-74-156-137.eu-west-1.compute.amazonaws.com',
+    user: 'dklpfoceferrru',
+    password: '452d87736887466ba2b2145781f9d65bd4799011ad7d61a6f0f4fe7d2020b69b',
+    database: 'dcdjp9gbtandjd',
+    port:5432
+});
+client.connect();
 
 
 const fetchMainCategories = async () => {
