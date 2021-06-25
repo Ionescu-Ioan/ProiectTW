@@ -15,11 +15,12 @@ const { stringify } = require('querystring'); //extrage doar proprietatea string
 const app = express();
 
 const client = new Client({
-    host: 'localhost',
+    host: 'https://engineeringmasteryconstruct.herokuapp.com/',
     user: 'ionut',
     password: '77777',
-    database: 'proiectTW',
-    port:5432
+    database: 'DATABASE_URL',
+    port:5432,
+    ssl: true
 });
 client.connect();
 
