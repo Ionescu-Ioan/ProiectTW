@@ -1,0 +1,9 @@
+article .bold{
+    font-weight:bold;
+    color: #140946;
+    /* background-color: var(--cl-marcare2); */
+}
+article{
+    background-color: var(--cl-marcare);
+    border-radius: 2rem;
+}

@@ -1,5 +1,5 @@
 
-window.addEventListener("load", function()
+window.addEventListener("DOMContentLoaded", function()
 {
     let tema=localStorage.getItem("tema");
     let icon_tema=localStorage.getItem("icon_tema");

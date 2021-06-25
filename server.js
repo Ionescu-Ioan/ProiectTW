@@ -33,17 +33,15 @@ const fetchMainCategories = async () => {
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
-// app.use(sassMiddleware({
-//     /* Options */
-//     dest: path.join(__dirname, '/media'),
-//     src: __dirname,
-//     prefix: '/css',
-//     debug: true
-// }));
 
 app.get("*/galerie_statica.json",function(req, res){    
-   
-    res.status(403).render("pagini/403");
+    client.query("select unnest(enum_range( null::categ_materiale)) as categ", function(errEnums,rezEnums){
+        let categoriiMateriale = [];
+        let rows = rezEnums.rows;
+        rows.forEach(({categ}) => {
+            if(categ) categoriiMateriale.push(categ);
+        });
+    res.status(403).render("pagini/403",{categoriimateriale: categoriiMateriale});});
 });
 
 // declare static directory -> https://expressjs.com/en/starter/static-files.html
@@ -119,7 +117,7 @@ app.get(["*/galerie_animata_4.css", "*/galerie_animata_9.css", "*/galerie_animat
             return;
         }
         if (stderr) {
-            console.log(`stderr: ${stderr}`);
+            //console.log(`stderr: ${stderr}`);
             res.end();
             return;
         }
@@ -130,7 +128,7 @@ app.get(["*/galerie_animata_4.css", "*/galerie_animata_9.css", "*/galerie_animat
 
 });
 
-//vooi afla anotimpul curent
+//voi afla anotimpul curent
 const anotimpuri={
     iarna: [0, 1, 11],
     primavara: [2, 3, 4],
@@ -150,14 +148,26 @@ app.get(['/', '/index'], function(req, res) {
     const luna = new Date().getMonth();
     const galerie = obtineImaginiAnotimp(luna);
     const user_ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-    res.render('pagini/index', {galerie, user_ip});
+    client.query("select unnest(enum_range( null::categ_materiale)) as categ", function(errEnums,rezEnums){
+        let categoriiMateriale = [];
+        let rows = rezEnums.rows;
+        rows.forEach(({categ}) => {
+            if(categ) categoriiMateriale.push(categ);
+        });
+    res.render('pagini/index', {galerie, user_ip, categoriimateriale: categoriiMateriale});});
 });
 
 
 app.get(['/pagina_galerie_statica'], function(req, res) {
     const luna = new Date().getMonth();
     const galerie = obtineImaginiAnotimp(luna);
-    res.render('pagini/pagina_galerie_statica', {galerie});
+    client.query("select unnest(enum_range( null::categ_materiale)) as categ", function(errEnums,rezEnums){
+        let categoriiMateriale = [];
+        let rows = rezEnums.rows;
+        rows.forEach(({categ}) => {
+            if(categ) categoriiMateriale.push(categ);
+        });
+    res.render('pagini/pagina_galerie_statica', {galerie, categoriimateriale: categoriiMateriale});});
 });
 
 app.get(['/pagina_galerie_animata'], function(req, res) {
@@ -176,7 +186,13 @@ app.get(['/pagina_galerie_animata'], function(req, res) {
         // indexes.add(getRand(count));
     }
     const galerie = imaginiVerificate.filter((val, key) => indexes.has(key));
-    res.render('pagini/pagina_galerie_animata', {galerie});
+    client.query("select unnest(enum_range( null::categ_materiale)) as categ", function(errEnums,rezEnums){
+        let categoriiMateriale = [];
+        let rows = rezEnums.rows;
+        rows.forEach(({categ}) => {
+            if(categ) categoriiMateriale.push(categ);
+        });
+    res.render('pagini/pagina_galerie_animata', {galerie, categoriimateriale: categoriiMateriale});});
 });
 
 // app.all('/media/*', function(req, res) {
@@ -184,17 +200,19 @@ app.get(['/pagina_galerie_animata'], function(req, res) {
 //     res.status(403).send('pagini/403');
 // });
 
+
 app.get("/produse",function(req, res){
     
     //console.log("Url:",req.url);
     //console.log("Query:", req.query.tip);
     // conditie_booleana? val_true : val_false
+    var cat = req.query.categ;
     let conditie1= req.query.categ ?  " and categorie='"+req.query.categ+"'" : "";
-    let conditie2= req.query.tip ?  " and tip_produs='"+req.query.tip+"'" : "";
+    //console.log(conditie1);
     //daca am parametrul tip in cale (tip=cofetarie, de exemplu) adaug conditia pentru a selecta doar produsele de acel tip
-    client.query("select id, nume, pret, greutate, tip_produs, categorie, cu_livrare, imagine, culoare, materiale_componente, data_adaugare from materiale where 1=1"+conditie1+conditie2, function(err,rez){
+    client.query("select descriere, id, nume, pret, greutate, tip_produs, categorie, cu_livrare, imagine, culoare, materiale_componente, data_adaugare from materiale where 1=1"+conditie1, function(err,rez){
      
-        //console.log(rez.rows);
+        //console.log(rez, err);
         client.query("select unnest(enum_range( null::tipuri_materiale)) as tip, unnest(enum_range( null::categ_materiale)) as categ, unnest(enum_range( null::culori)) as culoare", function(errEnums,rezEnums){
         
             let tipuriMateriale = [];
@@ -206,81 +224,56 @@ app.get("/produse",function(req, res){
                 if(categ) categoriiMateriale.push(categ);
                 if(culoare) culori.push(culoare);
             });
-          
-            res.render("pagini/produse", {produse:rez.rows, tipuriMateriale, categoriiMateriale, culori});//obiectul {a:10,b:20} poarta numele locals in ejs  (locals["a"] sau locals.a)
+         
+            res.render("pagini/produse", {produse:rez.rows, tipuriMateriale, categoriimateriale: categoriiMateriale, culori, preselectedCateg:req.query.categ, Cat:cat || ""});//obiectul {a:10,b:20} poarta numele locals in ejs  (locals["a"] sau locals.a)
         });
     });
 });
+
+
+//pagina proprie produsului
+app.get("/produs/:id_produs",function(req, res){
+    console.log(req.params);
+    
+    const rezultat= client.query("select * from materiale where id="+req.params.id_produs, function(err,rez){
+        //console.log(err, rez);
+        console.log(rez.rows);
+        client.query("select unnest(enum_range( null::categ_materiale)) as categ", function(errEnums,rezEnums){
+            let categoriiMateriale = [];
+            let rows = rezEnums.rows;
+            rows.forEach(({categ}) => {
+                if(categ) categoriiMateriale.push(categ);
+            });
+        res.render("pagini/produs", {prod:rez.rows[0], categoriimateriale:categoriiMateriale});});
+    });
+
+});
+
 
 // map to template -> https://webapplog.com/url-parameters-and-routing-in-express-js/
 app.get(['/:template', '/:template/*'],  function(req, res, next) {    
     const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
    
     let template = req.params.template;
-    res.render('pagini/' + template, {user_ip: ip}, function(err, html) {
+    client.query("select unnest(enum_range( null::categ_materiale)) as categ", function(errEnums,rezEnums){
+        let categoriiMateriale = [];
+        let rows = rezEnums.rows;
+        rows.forEach(({categ}) => {
+            if(categ) categoriiMateriale.push(categ);
+        });
+    res.render('pagini/' + template, {user_ip: ip, categoriimateriale: categoriiMateriale}, function(err, html) {
         // handle missing template
         if (err) {
             if (err.message.indexOf('Failed to lookup view') !== -1) {
-                return res.status(404).render('pagini/404');
+                return res.status(404).render('pagini/404',{user_ip: ip, categoriimateriale: categoriiMateriale});
             }
             throw err;
         }
         res.send(html);
-    });
+    });});
 
 });
 
-
-
-// var options = [
-//     set0 = ['Option 1','Option 2'],
-//     set1 = ['First Option','Second Option','Third Option']
-// ];
-// function makeUL(array) {
-// // Create the list element:
-// var list = document.createElement('ul');
-
-// for (var i = 0; i < array.length; i++) {
-//     // Create the list item:
-//     var item = document.createElement('li');
-
-//     // Set its contents:
-//     item.appendChild(document.createTextNode(array[i]));
-
-//     // Add it to the list:
-//     list.appendChild(item);
-// }
-
-// // Finally, return the constructed list:
-// return list;
-// }
-
-// // Add the contents of options[0] to #foo:
-// document.getElementById('foo').appendChild(makeUL(options[0]));
-
-
-
-
-
-
-
-// app.all('/media', function (req, res, next) {
-//     console.log('Accessing the secret section ...');
-//     next() // pass control to the next handler
-//   });
-
-
-
-// 404 status -> https://expressjs.com/en/starter/faq.html
-/*app.use(function (req, res, next) {
-    res.status(404).render('pagini/404');
-});
-
-//403 status
-app.use(function (req, res, next) {
-    res.status(403).render('pagini/403');
-});
-*/
 
 // 500 error
 app.use(function (err, req, res, next) {

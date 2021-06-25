@@ -1,0 +1,195 @@
+main{
+    --padd-main:1rem;
+    padding-left:var(--padd-main);
+    padding-right:var(--padd-main);
+}
+
+button{
+    background-color: var(--cl-butoane);
+    border-radius: 1rem;
+}
+
+input{
+    cursor: pointer;
+ 
+}
+
+#inp-denumire{
+    cursor:text;
+}
+
+select{
+    cursor: pointer;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+article{
+    background-color: var(--cl-marcare);
+}
+
+article:hover{
+    background-color:  var(--cl-marcare-hover);
+    cursor: pointer;
+}
+
+article:hover h3 a{
+    color: #6b47ce !important; 
+    transform: scale(1.1);
+    font-size: 110%;
+    cursor: pointer;
+}
+
+.grid-produse{
+    
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:1rem;
+}
+
+#grid_inputuri
+{
+    display:grid;
+    grid-template-areas:
+    'item1 item2' 
+    'item3 item4'
+    'item5 item6' 
+    'item7 item7'
+    ;
+}
+
+#div_inp-denumire
+{
+    grid-area: item1;
+}
+#div_inp-pret
+{
+    grid-area: item7;
+}
+#select_categ
+{
+    grid-area: item3;
+}
+
+.check-box
+{
+    grid-area: item4;
+}
+#div_textarea{
+    grid-area: item2;
+}
+#div_sl-culoare{
+    grid-area: item6;
+}
+#div_sl-livrare{
+    grid-area: item5;
+}
+
+.grid-produse .produs{
+    grid-column-gap: 1rem;
+    display: grid;
+    grid-template-areas:
+    'nume nume' 
+    'col1 col2'
+    'img img'
+    ;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 0.8rem 0.3rem grey;
+    overflow: hidden;
+    
+}
+
+.info-prod{
+    grid-area: col1;
+}
+.descriere-prod{
+    grid-area: col2;
+}
+
+#imagine_produs
+{
+    grid-area: img;
+}
+.nume{
+    grid-area: nume;
+}
+
+
+.grid-produse .produs h3{
+
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.grid-produse .produs h3 a{
+    color:black;
+    transition: all .2s ease-in-out;
+}
+/* .grid-produse .produs h3 a:hover{
+    color: #6b47ce;
+    transform: scale(1.1);
+    font-size: 110%;
+} */
+.grid-produse .produs figure{
+    text-align: center;
+}
+.grid-produse .produs figure img{
+    border:1px solid grey
+}
+.grid-produse .produs .info-prod{
+    display:block;
+
+}
+
+.grid-produse .produs .info-prod > div{
+    text-align:left;
+    display: block;
+}
+
+.grid-produse .produs .descriere-prod > div{
+    text-align:left;
+    display: block;
+}
+
+.grid-produse .produs .descriere-prod .nume_caracteristica{
+    text-align:center;
+    font-weight:bold;
+    font-size: inherit;
+    display: inline;
+    color: #140946;
+    /* background-color: var(--cl-marcare2); */
+}
+.grid-produse .produs .info-prod .nume_caracteristica{
+    text-align:center;
+    font-weight:bold;
+    font-size: inherit;
+    display: inline;
+    color: #140946;
+    /* background-color: var(--cl-marcare2); */
+}
+
+.grid-produse .produs div.categorie{
+    text-align:center;
+}
+
+.info-produse{
+    background-color: var(--cl-marcare);
+    padding:0.2rem;
+    box-shadow: 0px 0px 0.5rem 0.15rem grey;
+}
+
+@media only screen and (max-width: 570px) {
+    #grid_inputuri{
+        display: block;
+    }
+    }
+
+@media only screen and (max-width: 1000px) {
+.grid-produse[class]{
+    grid-template-columns: 1fr;
+}
+}

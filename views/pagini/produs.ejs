@@ -19,14 +19,25 @@
                     <h2>Pagină produs</h2>
                         <article id="art-produs">
                             <h3><span class="nume"><%- locals.prod.nume %></span></h3>
-                            <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
-                            <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
-                            <p>Ingrediente: <span class="ingrediente"><%- locals.prod.ingrediente %> </span></p>
-                            <p>Calorii: <span class="calorii"><%- locals.prod.calorii %> </span></p>
-                            <p>Gramaj: <span class="gramaj"><%- locals.prod.gramaj %> </span></p>
-                            <p>Categorie: <span class="categorie"><%- locals.prod.categorie %> </span></p>
-                            <p>Pentru diabetici: <span class="pt_diabetici"><%- locals.prod.pt_diabetici %> </span></p>
-                            <p>Data adăugare: <span class="categorie"><%- locals.prod.data_adaugare %> </span></p>
+                            <p class="pret"><span class="bold">Preț:</span> <span class="val-pret"><%- prod.pret%></span> lei</p>
+                            <p><span class="bold">Descriere:</span> <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                            <p><span class="bold">Greutate:</span> <span class="gramaj"><%- locals.prod.greutate %> </span> kg</p>
+                            <p><span class="bold">Categorie:</span> <span class="categorie"><%- locals.prod.categorie %> </span></p>
+                            <p class="materiale_componente"><span class="bold">Materiale componente:</span> <span class="val-materiale-componente"><%- prod.materiale_componente%></span></p>
+                            <p class="tip_produs"><span class="bold">Tip produs:</span> <span class="val-tip-produs"><%- prod.tip_produs%></span></p>
+                            <p class="data_adaugare"><span class="bold">Data adăugării:</span> <time class="val-data-adaugare">
+                                <% prod.data_adaugare
+                                let zi_saptamana= prod.data_adaugare.getDay();
+                                let zi= prod.data_adaugare.getDate();
+                                let luna= prod.data_adaugare.getMonth();
+                                let an= prod.data_adaugare.getFullYear(); 
+                                let vector_zile=["Duminica","Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata"];
+                                let vector_luni=["Ianuari", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"];
+                                %>  <%- zi%> <%- vector_luni[luna]%> <%- an%> [<%- vector_zile[zi_saptamana]%>]</time>
+                            </p>
+                            <p class="cu_livrare"><span class="bold">Livrare:</span> <span class="val-cu-livrare"><% var livrare=""; if(prod.cu_livrare){livrare+="cu livrare";} else livrare+="fara livrare" %> <%-livrare%></span></p>
+                            <p class="culoare"><span class="bold">Culoare:</span> <span class="val-culoare"><%-prod.culoare%></span></p>
+
                             <figure class="imag-produs">
                                 <img  src="/media/imagini_produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
                             </figure>    

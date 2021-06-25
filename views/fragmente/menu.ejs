@@ -30,14 +30,13 @@
         <a href="/produse">Produse</a>
         <ul>
             <li>
-                <a href="/produse">Toate</a>
+                <a class ="buton_categ" href="/produse">Orice</a>
             </li>
-            <li>
-                <a href="/produse?tip=constructii">Construcții</a>
-            </li>
-            <li>
-                <a href="/produse?tip=amenajari">Amenajări</a>
-            </li>  
+            <% for( let categorie in locals.categoriimateriale) { %>
+                <li>
+                    <a class ="buton_categ" href="/produse?categ=<%-categoriimateriale[categorie]%>"><%-categoriimateriale[categorie]%></a>
+                </li>
+            <% } %> 
         </ul>
     </li>
     <li class="element-meniu">

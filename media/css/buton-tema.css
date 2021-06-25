@@ -6,6 +6,7 @@
     right: 1vw;
     background-color: var(--buton_tema);
     border-radius: 50%;
+    z-index: 11;
 }
 
 #schimbare-tema:hover {

@@ -7,7 +7,7 @@
 */
 @media only screen and (max-width: 920px) {
     body {
-        font-size: 80%;
+        font-size: 75%;
     }
 
     nav a.acasa{
@@ -63,4 +63,6 @@
     #best-sellers ol li {
         flex: 40%;
     }
+    
+
 }

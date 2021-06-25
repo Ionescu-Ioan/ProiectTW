@@ -11,7 +11,12 @@
 /*ex 5*/
 
 #mainMenu{
-   display: none 
+   display: none;
+}
+
+#container_animatie
+{
+    display: none;
 }
 
 .title{
