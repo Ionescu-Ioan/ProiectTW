@@ -14,15 +14,17 @@ const express = require('express');
 const { stringify } = require('querystring'); //extrage doar proprietatea stringify 
 const app = express();
 
+const { Client } = require('pg');
+
 const client = new Client({
-    host: 'https://engineeringmasteryconstruct.herokuapp.com/',
-    user: 'ionut',
-    password: '77777',
-    database: 'DATABASE_URL',
-    port:5432,
-    ssl: true
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
+
 client.connect();
+
 
 
 const fetchMainCategories = async () => {
