@@ -15,10 +15,10 @@ const { stringify } = require('querystring'); //extrage doar proprietatea string
 const app = express();
 
 const client = new Client({
-    host: 'ec2-54-74-156-137.eu-west-1.compute.amazonaws.com',
-    user: 'dklpfoceferrru',
-    password: '452d87736887466ba2b2145781f9d65bd4799011ad7d61a6f0f4fe7d2020b69b',
-    database: 'dcdjp9gbtandjd',
+    host: 'localhost',
+    user: 'ionut',
+    password: '77777',
+    database: 'proiectTW',
     port:5432
 });
 client.connect();
@@ -281,5 +281,7 @@ app.use(function (err, req, res, next) {
     res.status(500).send('A aparut o eroare! Va rugam incercati mai tarziu');
 });
 
-app.listen(8080);
+var s_port=process.env.PORT;
+
+app.listen(s_port || 5000);
 console.log('Serverul a pornit!');

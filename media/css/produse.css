@@ -129,11 +129,7 @@ article:hover h3 a{
     color:black;
     transition: all .2s ease-in-out;
 }
-/* .grid-produse .produs h3 a:hover{
-    color: #6b47ce;
-    transform: scale(1.1);
-    font-size: 110%;
-} */
+
 .grid-produse .produs figure{
     text-align: center;
 }
@@ -160,7 +156,7 @@ article:hover h3 a{
     font-weight:bold;
     font-size: inherit;
     display: inline;
-    color: #140946;
+    color: #23126d;
     /* background-color: var(--cl-marcare2); */
 }
 .grid-produse .produs .info-prod .nume_caracteristica{
@@ -168,7 +164,7 @@ article:hover h3 a{
     font-weight:bold;
     font-size: inherit;
     display: inline;
-    color: #140946;
+    color: #23126d;
     /* background-color: var(--cl-marcare2); */
 }
 
