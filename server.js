@@ -28,7 +28,8 @@ const client = new Client({
     user: 'zeicqbdkzgdrid',
     password: 'b34d9e87b6490cbbfc02d64634c961c56208a1eb3c48f17913614d59a9c56f1c',
     database: 'd4kj1fd7b9k6n7',
-    port:5432
+    port:5432,
+    ssl: true
 });
 client.connect();
 
