@@ -14,11 +14,20 @@ const express = require('express');
 const { stringify } = require('querystring'); //extrage doar proprietatea stringify 
 const app = express();
 
+// const client = new Client({
+//     host: 'localhost',
+//     user: 'ionut',
+//     password: '77777',
+//     database: 'proiectTW',
+//     port:5432
+// });
+// client.connect();
+
 const client = new Client({
     host: 'localhost',
-    user: 'ionut',
-    password: '77777',
-    database: 'proiectTW',
+    user: 'zeicqbdkzgdrid',
+    password: 'b34d9e87b6490cbbfc02d64634c961c56208a1eb3c48f17913614d59a9c56f1c',
+    database: 'd4kj1fd7b9k6n7',
     port:5432
 });
 client.connect();
@@ -233,11 +242,11 @@ app.get("/produse",function(req, res){
 
 //pagina proprie produsului
 app.get("/produs/:id_produs",function(req, res){
-    console.log(req.params);
+    //console.log(req.params);
     
     const rezultat= client.query("select * from materiale where id="+req.params.id_produs, function(err,rez){
         //console.log(err, rez);
-        console.log(rez.rows);
+        //console.log(rez.rows);
         client.query("select unnest(enum_range( null::categ_materiale)) as categ", function(errEnums,rezEnums){
             let categoriiMateriale = [];
             let rows = rezEnums.rows;
