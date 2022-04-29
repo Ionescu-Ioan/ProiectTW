@@ -24,10 +24,10 @@ const app = express();
 // client.connect();
 
 const client = new Client({
-    host: 'ec2-34-240-75-196.eu-west-1.compute.amazonaws.com',
-    user: 'zeicqbdkzgdrid',
-    password: 'b34d9e87b6490cbbfc02d64634c961c56208a1eb3c48f17913614d59a9c56f1c',
-    database: 'd4kj1fd7b9k6n7',
+    host: 'ec2-176-34-116-203.eu-west-1.compute.amazonaws.com',
+    user: 'rmijicncjiqugu',
+    password: 'ef62133f131740071fb93596289b7a203a53054fe17ce8ca59c85a79e833a28e',
+    database: 'd7sj6v23qlfflf',
     port:5432,
     ssl: { rejectUnauthorized: false }
 });
