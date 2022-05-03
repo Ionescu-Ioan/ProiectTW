@@ -26,5 +26,8 @@
     "scss": "node-sass --watch scss -o css"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "14.14.0"
+  }
 }
